@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <button @click="toggleModal">Toggle Modal</button>
+  
+      <teleport to="body">
+        <div v-if="showModal" class="modal">
+          <button @click="toggleModal">Close Modal</button>
+          <p>Modal Content</p>
+        </div>
+      </teleport>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

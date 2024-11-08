@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap');
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #1D1F20;
+  color: white;
+  font-size: 1vmin;
+  font-family: 'Londrina Solid', sans-serif;
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+.app {
+  width: 90vmin;
+  height: 45.75vmin;
+  background: #fff;
+  position: relative;
+  overflow: visible;
+  visibility: hidden;
+}
+
+.app:before, .app:after {
+  content: " Curious Shaped Rocks ";
+  text-transform: uppercase;
+  position: absolute;
+  top: -20vmin;
+  color: #fff;
+  text-shadow: -2px -2px 1px #000,  2px 2px 1px #000,  0px 0px 5px #000,  0px 0px 5px #000;
+  width: 100%;
+  text-align: center;
+  font-size: 8.75vmin;
+  word-spacing: 5vmin;
+}
+
+.app:after {
+  content: "La Pedriza · Madrid · Spain";
+  top: inherit;
+  bottom: -20vmin;
+  word-spacing: 0vmin;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5% 1.5%;
+  padding: 1vmin;
+}
+
+.item {
+  height: 21vmin;
+  cursor: pointer;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.detail {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  width: 90.1vmin;
+  cursor: pointer;
+  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.detail > img {
+  position: relative;
+  z-index: 1;
+}
+
+.detail .content {
+  background: #ffffff;
+  padding: 2vmin 3vmin;
+  font-size: 2.5vmin;
+  box-sizing: border-box;
+  flex-grow: 1;
+  color: #666;
+}
+
+.detail .content > * {
+  margin-bottom: 1.5vmin;
+}
+
+.detail .title {
+  font-size: 5vmin;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.detail .titlespa {
+  font-size: 5vmin;
+  text-transform: uppercase;
+  color: #666;
+  float: right;
+  position: absolute;
+  right: 3vmin;
+  top: 2.05vmin;
+}
+
+.detail .secondary,
+.detail .description {
+  color: #999;
+}
+
+
+/* show thumbnail while big image loads */
+.item:nth-child(1) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_caliz.jpg) ;
+}
+.item:nth-child(2) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_elefantito.jpg) ;
+}
+.item:nth-child(3) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_risco_llamas.jpg) ;
+}
+.item:nth-child(4) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_pajaro.jpg) ;
+}
+.item:nth-child(5) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_dedo_dios.jpg) ;
+}
+.item:nth-child(6) {
+  background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/riscos/thumbs/thumbs_caracol.jpg) ;
+}

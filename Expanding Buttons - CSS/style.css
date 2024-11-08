@@ -1,0 +1,758 @@
+/*** IN PROGRESS ***/
+
+:root {
+	--trans: all 0.25s ease 0s;
+	--brd-clr: #fff;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: radial-gradient(#333, #000);
+	font-family: Arial, Helvetica, serif;
+	font-size: 12px;
+	color: red;
+}
+
+.content {
+	width: 50vmin;
+	height: 50vmin;
+	background: red;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+		
+		
+label[for=rock-climbing] {
+    width: 60px;
+    height: 60px;
+    background: #111;
+    border-radius: 100%;
+    position: absolute;
+    overflow: visible;
+    box-sizing: border-box;
+	border: 4px solid #fff;
+    background: url(https://lh6.googleusercontent.com/-h8cjV4p2ltI/Us7FdHPPn-I/AAAAAAAAHIo/HxPWOZI8BKI/s25/icon_material.png) no-repeat center center #111;
+    color: #fff0 !important;
+    z-index: 5;
+}
+
+.climb-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 60px;
+    height: 60px;
+    margin-left: 15px;
+}
+		
+.climb-style {
+    width: 500%;
+    height: 500%;
+    max-width: 0;
+    max-height: 0;
+    position: absolute;
+    overflow: hidden;
+    background: #0001;
+    border-radius: 0 10px 10px 0;
+    display: block;
+	box-shadow: 0 0 0 2px #fff9, 0 0 0 2px #fffd inset;
+    box-sizing: border-box;
+	transition: var(--trans);
+}
+
+#rock-climbing:checked ~ .climb-selector label[for=rock-climbing],
+#c-aid:checked ~ .climb-selector label[for=c-aid],
+#c-free:checked ~ .climb-selector label[for=c-free],
+#c-roped:checked ~ .climb-selector label[for=c-roped],
+#c-unroped:checked ~ .climb-selector label[for=c-unroped],
+#c-soloing:checked ~ .climb-selector label[for=c-soloing],
+#c-bouldering:checked ~ .climb-selector label[for=c-bouldering],
+#c-lead:checked ~ .climb-selector label[for=c-lead],
+#c-toprope:checked ~ .climb-selector label[for=c-toprope],
+#c-trad:checked ~ .climb-selector label[for=c-trad],
+#c-sport:checked ~ .climb-selector label[for=c-sport] {
+	color: #fff;
+	filter: invert(1);
+}
+
+
+#rock-climbing:checked ~ .climb-selector label[for=rock-climbing] + .aid-free {
+    max-width: 125px;
+    max-height: 150px;
+	z-index: 4;
+	overflow: visible;
+}
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ .climb-selector  .roped-unroped {
+    max-width: 225px;
+    max-height: 240px;
+	z-index: 3;
+	overflow: visible;
+}
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked ~ .climb-selector  .soloing-bouldering,
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked ~ .climb-selector  .lead-toprope {
+    max-width: 320px;
+    max-height: 330px;
+	z-index: 2;
+	overflow: visible;
+}
+
+/*
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked ~ .climb-selector  .lead-toprope {
+	z-index: 1;
+	overflow: visible;
+}
+*/
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked ~ #c-lead:checked ~ .climb-selector  .trad-sport {
+    max-width: 415px;
+    max-height: 420px;
+	z-index: 1;
+	overflow: visible;
+}
+
+
+
+input { display: none; }
+
+
+label {
+	width: 100%;
+    height: 100%;
+	cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border: 3px solid #fff;
+    box-sizing: border-box;
+	box-shadow: 3px 3px 5px #212121, -3px -3px 5px #2b2b2b;
+}
+
+
+
+
+
+
+
+
+
+
+.climb-options {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.climb-options label {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    text-shadow: 0 0 1px #111, 0 0 2px #111, 0 0 3px #111;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.aid-free .climb-options label,
+.roped-unroped .climb-options label,
+.soloing-bouldering .climb-options label,
+.lead-toprope .climb-options label,
+.trad-sport .climb-options label  {
+    position: absolute;
+    right: -25px;
+    margin-top: 70px;
+}
+
+
+
+.aid-free .climb-options label + label {
+    margin-top: -70px;
+}
+
+.roped-unroped .climb-options label  {
+    margin-top: -135px;
+}
+.roped-unroped .climb-options label + label {
+    margin-top: -5px;
+}
+
+.soloing-bouldering .climb-options label {
+    margin-top: -70px;
+}
+.soloing-bouldering .climb-options label + label {
+    margin-top: 65px;
+}
+
+
+
+.lead-toprope .climb-options label {
+    margin-top: -200px;
+}
+.lead-toprope .climb-options label + label {
+    margin-top: -70px;
+}
+
+
+.trad-sport .climb-options label {
+    margin-top: -260px;
+}
+.trad-sport .climb-options label + label {
+    margin-top: -135px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.climbing-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    box-sizing: border-box;
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/cabo-de-ogono/ogono-06-javi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+	z-index: -2;
+    left: 0;
+    top: 0;
+}
+
+
+
+.tooltip {
+    left: -150px;
+    position: absolute;
+	transition: var(--trans);
+	z-index: 0;
+	min-width: 100px;
+}
+
+label[for=rock-climbing]:hover ~ .tooltip {
+    left: 105px;
+}
+#rock-climbing:checked ~ .climb-selector label[for=rock-climbing]:hover ~ .tooltip {
+    z-index: 5;
+	left: -150px;
+}
+
+.tooltip:before {
+	content: "ROCK CLIMBING";
+    background: #00000082;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.tooltip:after {
+    content: "";
+    border: 12px solid #fff0;
+    border-right-color: #00000082;
+    position: absolute;
+    border-radius: 1px;
+    margin-left: -24px;
+    margin-top: -29px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.aid-free .tooltip {
+    left: -21vmin;
+    top: 7.5vmin;
+	z-index: -1;
+}
+
+.aid-free label:hover ~ .tooltip {
+    left: 180px;
+}
+
+.aid-free label[for="c-free"]:hover ~ .tooltip {
+    top: 23px;
+}
+.aid-free label[for="c-free"]:hover ~ .tooltip:before {
+    content: "FREE\00a0 CLIMBING";
+}
+
+.aid-free label[for="c-aid"]:hover ~ .tooltip {
+    top: 94px;
+}
+
+.aid-free label[for="c-aid"]:hover ~ .tooltip:before {
+    content: "AID\00a0 CLIMBING";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label[for="c-aid"] {
+    background: url(https://lh3.googleusercontent.com/-_RugrMv4vbo/Us7NgdKLumI/AAAAAAAAHJ8/CCRX1an5ci0/s25/icon_artificial.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-free"] {
+    background: url(https://lh6.googleusercontent.com/-RNlQyG2sDdo/Us64r4yYUxI/AAAAAAAAHHk/GjbpTe1AipM/s24/icon_fisureros.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-roped"] {
+    background: url(https://cdn.josetxu.com/img/icon-roped.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-unroped"], label[for="c-soloing"], label[for="c-bouldering"] {
+    background: url(https://cdn.josetxu.com/img/icon-unroped.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-soloing"] {
+	background: url(https://cdn.josetxu.com/img/icon-unroped.png) no-repeat center center, linear-gradient(90deg, #111 20px, #fff0 21px), radial-gradient(circle at 50% 50%, #fff 0 20px, #fff0 21px 100%) #111;
+    background-size: 16px 16px, 100% 100%, 100% 100%;
+    background-position: 8px 8px, 0 0, 0 0;
+    background-repeat: no-repeat;
+}
+
+label[for="c-bouldering"] {
+    background: url(https://cdn.josetxu.com/img/icon-unroped.png) no-repeat center center, radial-gradient(circle at 50% 50%, #fff0 0 20px, #111 21px 100%), radial-gradient(circle at 39px 27px, #fff 0 18px, #fff0 19px 100%) #111;
+    background-size: 20px 20px, 100% 100%, 100% 100%;
+    background-position: 6px 20px, 0 0, 0 0;
+    background-repeat: no-repeat;
+}
+
+
+/* borrar cosas de texto por aqui */
+
+
+
+
+label[for="c-toprope"] {
+    background: url(https://cdn.josetxu.com/img/icon-toprope.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-lead"] {
+    background: url(https://cdn.josetxu.com/img/icon-lead.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-trad"] {
+    background: url(https://lh4.googleusercontent.com/-P-StE-scboI/Us69f9rWioI/AAAAAAAAHH4/naeV9ez9DHw/s25/icon_friends.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+label[for="c-sport"] {
+    background: url(https://cuadernodeescaladas.com/wp-content/themes/josetxu-notepad/images/icon_deportiva.png) no-repeat center center #111;
+    color: #fff0 !important;
+	text-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.climbing-info {
+	background: conic-gradient(from 45deg at 0 50%, #fff8 0 25%, #fff0 0 100%);
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: -300px;
+    top: calc(50% + 18px);
+    border-radius: 2px;
+    background-size: 10px 30px;
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+	transition: var(--trans);
+}
+
+#rock-climbing:checked ~ #c-aid:checked ~ .climb-selector .climbing-info {
+    left: 145px;
+    top: calc(50% + 18px);
+}
+
+
+
+.climbing-info:before {
+    content: "AID CLIMBING";
+    padding: 7px 10px;
+    background: #fff8;
+    position: absolute;
+    color: #000;
+    left: 10px;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+.climbing-info:after {
+    content: "Aid climbing incorporates permanent or removable protection that’s placed into the rock to help the climber make upward progress. It’s usually reserved for climbs that are too difficult for the lead climber to complete using only the natural rock surfaces. The climber attaches a ladder made of webbing (called an aider) to a protection piece, then stands or pulls herself up on the ladder, then repeats the process.";
+    padding: 15px;
+    background: #fff8;
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    font-size: 17px;
+    border-radius: 2px;
+    color: #111;
+    text-align: justify;
+}
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ .climb-selector .climbing-info {
+    left: 175px;
+    top: calc(50% - 53px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ .climb-selector .climbing-info:before {
+    content: "FREE CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ .climb-selector .climbing-info:after {
+    content: "Free climbing encompasses every other type of rock climbing other than aid climbing. It refers to climbing using only your hands and feet on natural features of the rock to move upwards. Depending on the specific style, various types of gear are used to protect against falling—but never to help the climber move upward. Free climbing breaks down into two categories: \A Roped and Unroped.";
+}
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ .climb-selector .climbing-info {
+    left: 225px;
+    top: calc(50% - 85px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ .climb-selector .climbing-info:before {
+    content: "ROPED FREE CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked ~ .climb-selector .climbing-info:after {
+    content: "Roped free climbing is climbing with a rope attached to a harness to protect against falls. It has two main categories: \A Lead and Top Rope. ";
+}
+
+
+/*
+Top rope climbing involves building an anchor above the climb before climbing it. Trad and sport climbing are forms of lead climbing, where the climber starts at the bottom of the climb and places protection to clip their rope to as they go up.
+*/
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-toprope:checked  ~ .climb-selector .climbing-info {
+    left: 245px;
+    top: calc(50% - 53px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-toprope:checked  ~ .climb-selector .climbing-info:before {
+    content: "TOP ROPE CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-toprope:checked ~ .climb-selector .climbing-info:after {
+    content: "Top Rope climbing involves setting up an anchor at the top of a climb and running the climbing rope through the anchor and back to the ground. A belayer holds one side of the rope and takes up slack as the climber, attached to the other side of the rope, moves upward. The climber can safely let go of the rock at any point and the rope will catch them, assuming the belayer is doing their job properly.";
+}
+
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked  ~ .climb-selector .climbing-info {
+    left: 270px;
+    top: calc(50% - 116px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked  ~ .climb-selector .climbing-info:before {
+    content: "LEAD CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ .climb-selector .climbing-info:after {
+    content: "Trad and Sport climbing are forms of lead climbing, where the climber starts at the bottom of the climb and places protection to clip their rope to as they go up. The type of protection used is the main difference between trad and sport climbing.";
+}
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-trad:checked  ~ .climb-selector .climbing-info {
+    left: 290px;
+    top: calc(50% - 148px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-trad:checked ~ .climb-selector .climbing-info:before {
+    content: "TRAD CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-trad:checked ~ .climb-selector .climbing-info:after {
+    content: "In Trad climbing the lead climber carries and places all gear necessary to protect against falls. Generally, a following climber will then remove the gear once a section of climbing (commonly called a “pitch”) is completed by the lead climber. While the gear and ethics have changed over time, the basic premise remains the same: the climber ascends a rock face carrying all their own protective gear.";
+}
+
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-sport:checked  ~ .climb-selector .climbing-info {
+    left: 290px;
+    top: calc(50% - 85px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-sport:checked ~ .climb-selector .climbing-info:before {
+    content: "SPORT CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-roped:checked  ~ #c-lead:checked ~ #c-sport:checked ~ .climb-selector .climbing-info:after {
+    content: "Sport Climbing is a type of climbing that involves clipping your rope into permanent bolts that are drilled into the rock as protection against falling. Sport climbing focuses on climbing move sequences across rock that couldn’t be protected with removable trad gear because of a lack of cracks, holes, etc. in which to place removable (trad) protection.";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ .climb-selector .climbing-info {
+    left: 225px;
+    top: calc(50% - 20px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ .climb-selector .climbing-info:before {
+    content: "UNROPED FREE CLIMBING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked ~ .climb-selector .climbing-info:after {
+    content: "Unroped free climbing is climbing without ropes to protect against falls. It comes in two main categories: Free Soloing and Bouldering.";
+}
+
+
+
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-soloing:checked  ~ .climb-selector .climbing-info {
+    left: 245px;
+    top: calc(50% - 53px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-soloing:checked  ~ .climb-selector .climbing-info:before {
+    content: "FREE SOLOING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-soloing:checked ~ .climb-selector .climbing-info:after {
+    content: "Free Soloing has been practiced among climbers for a long time. During a free solo ascent, a climber uses only their hands and feet on the rock as protection against falls. Because free soloing is so dangerous, most practitioners only free solo climbs that they’ve practiced while roped many times.";
+}
+
+
+
+
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-bouldering:checked  ~ .climb-selector .climbing-info {
+    left: 245px;
+    top: calc(50% + 15px);
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-bouldering:checked  ~ .climb-selector .climbing-info:before {
+    content: "BOULDERING";
+}
+
+#rock-climbing:checked ~ #c-free:checked ~ #c-unroped:checked  ~ #c-bouldering:checked ~ .climb-selector .climbing-info:after {
+    content: "Bouldering is unroped free climbing that takes place on rocks and walls that are low to the ground, so that the risk from falls is minimal. Whether practiced outdoors or indoors at a climbing gym, there are usually soft pads called 'crash pads' at the base of the climb to protect climbers if they fall.";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.climbing-img {
+	filter: blur(1px)
+}
+
+.climbing-img:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0006;
+}
+
+#c-aid:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/hueso/lucas_13.jpg);
+}
+
+#c-free:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pequena-escocia/06.jpg);
+}
+
+
+
+#c-free:checked ~ #c-roped:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/galayos/pena-del-aguila/luna-29.jpg);
+}
+
+#c-free:checked ~ #c-roped:checked ~ #c-toprope:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/sierra-alhamilla/2020_10-10.jpg);
+}
+
+#c-free:checked ~ #c-roped:checked ~ #c-lead:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/turre/semanita-19-turre.jpg);
+}
+
+#c-free:checked ~ #c-roped:checked ~ #c-lead:checked ~ #c-sport:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/patones/uceda-02.jpg);
+}
+
+#c-free:checked ~ #c-roped:checked ~ #c-lead:checked ~ #c-trad:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/principiantes/mira-un-buho-04.jpg);
+}
+
+
+
+
+
+
+
+
+#c-free:checked ~ #c-unroped:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/monsul/palsur-08.jpg);
+}
+
+#c-free:checked ~ #c-unroped:checked ~ #c-bouldering:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/pedriza/bulder/anikka_09.jpg);
+}
+
+#c-free:checked ~ #c-unroped:checked ~ #c-soloing:checked ~ .climb-selector .climbing-img {
+    background-image: url(https://cuadernodeescaladas.com/wp-content/galerias/fotos/monsul/palsur-08.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*** HIDE TOOLTIP ***/
+#c-aid:checked ~ .climb-selector .aid-free label[for="c-aid"]:hover ~ .tooltip,
+#c-free:checked ~ .climb-selector .aid-free label[for="c-free"]:hover ~ .tooltip {
+    display: none !important;
+}

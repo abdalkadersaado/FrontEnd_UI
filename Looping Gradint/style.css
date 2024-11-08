@@ -1,0 +1,217 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 12pt;
+  font-weight: 400;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: white;
+  background-size: cover;
+  background-position: center;
+}
+
+div {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background: transparent;
+  filter: drop-shadow(3px 3px 50px #111) drop-shadow(1px 1px 0px violet)
+    drop-shadow(2px 2px 0px violet);
+  border: 1px dotted violet;
+  border-radius: 30px;
+  padding: 55px 70px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  animation: stinkymove 10s ease-in-out infinite;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 100pt;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  line-height: 130%;
+  background-image: linear-gradient(
+    to right,
+    #f7ff00,
+    #33d0ff,
+    #25ffbb,
+    #33d0ff,
+    #77f,
+    #33d0ff,
+    #25ffbb,
+    #33d0ff,
+    #f7ff00
+  );
+  background-size: 400%;
+  background-position: 20%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  -webkit-text-stroke: 1.5px white;
+  paint-order: stroke fill;
+}
+
+p:nth-child(even) {
+  animation: 3s stinkydown ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+p:nth-child(odd) {
+  animation: 3s stinkyup ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+p:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+p:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+p:nth-child(3) {
+  margin-right: 40px;
+  animation-delay: 0.9s;
+}
+
+p:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+p:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+p:nth-child(6) {
+  animation-delay: 1.8s;
+}
+
+p:nth-child(7) {
+  animation-delay: 2.1s;
+}
+
+p:nth-child(8) {
+  animation-delay: 2.4s;
+}
+
+p:nth-child(9) {
+  animation-delay: 2.7s;
+}
+
+@keyframes stinkyup {
+  0% {
+    transform: translateY(-147px) rotateX(90deg);
+    opacity: 0;
+    background-position: 80% center;
+  }
+  70% {
+    transform: translateY(0px) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) rotateZ(30deg) scale(0);
+    opacity: 1;
+    background-position: 20% center;
+  }
+}
+
+@keyframes stinkydown {
+  0% {
+    transform: translateY(147px) rotateX(-90deg);
+    opacity: 0;
+    background-position: 20% center;
+  }
+  70% {
+    transform: translateY(0px) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) rotateZ(30deg) scale(0);
+    opacity: 1;
+    background-position: 80% center;
+  }
+}
+
+@keyframes stinkymove {
+  0% {
+    transform: rotateY(-20deg);
+  }
+  50% {
+    transform: rotateY(20deg);
+  }
+  100% {
+    transform: rotateY(-20deg);
+  }
+}
+
+@media (max-width: 930px) {
+  p {
+    font-size: 70pt;
+  }
+  @keyframes stinkyup {
+    0% {
+      transform: translateY(-120px) rotateX(90deg);
+      opacity: 0;
+      background-position: 80% center;
+    }
+    70% {
+      transform: translateY(0px) rotateZ(0deg) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px) rotateZ(30deg) scale(0);
+      opacity: 1;
+      background-position: 20% center;
+    }
+  }
+  @keyframes stinkydown {
+    0% {
+      transform: translateY(120px) rotateX(-90deg);
+      opacity: 0;
+      background-position: 20% center;
+    }
+    70% {
+      transform: translateY(0px) rotateZ(0deg) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px) rotateZ(30deg) scale(0);
+      opacity: 1;
+      background-position: 80% center;
+    }
+  }
+}

@@ -1,0 +1,570 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 12pt;
+  font-weight: 400;
+  color: black;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    #588cdb,
+    #009cea,
+    #00acf1,
+    #00baf0,
+    #00c7e7,
+    #00d3d7,
+    #00dec1,
+    #00e6a6,
+    #59ed8a,
+    #97f26e,
+    #ccf456,
+    #fff347
+  );
+  margin: 0;
+  padding: 0;
+}
+
+body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.master-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.master-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 340px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  z-index: 1;
+}
+
+.master-card::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 25px;
+}
+
+.master-card:hover::after {
+  width: 120%;
+  height: 110%;
+  border: 1px solid white;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.twin-row {
+  position: relative;
+  width: 112%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-left,
+.icon-right {
+  color: White;
+  width: 37px;
+  height: 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 14pt;
+  font-weight: unset;
+  border: 1px solid white;
+  z-index: 1;
+}
+
+.master-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.master-image {
+  position: relative;
+  width: 70%;
+  height: 130px;
+  background: url("https://picsum.photos/id/981/1920/1080");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.master-image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  mix-blend-mode: color;
+}
+
+.master-info h1 {
+  position: relative;
+  margin: 15px 0px 5px 0px;
+  padding: 0;
+  font-size: 20pt;
+  line-height: 0;
+  text-align: center;
+}
+
+.master-info h1::before {
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 0px;
+  height: 10px;
+  background: transparent;
+  content: "";
+  z-index: -1;
+}
+
+.child-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 297px;
+  top: -5px;
+  z-index: 0;
+}
+
+.master-info img,
+.child-card img {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+.child-image {
+  position: relative;
+  width: 140px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.child-image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  border-radius: 5px;
+  content: "";
+  z-index: 2;
+  mix-blend-mode: color;
+}
+
+.child-card img {
+  border-radius: 5px;
+}
+
+.child-card h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  line-height: 6pt;
+  text-align: center;
+  z-index: 1;
+}
+
+.child-card h1::before {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: LightGray;
+  content: "";
+  z-index: -1;
+}
+
+.master-info p,
+.child-card p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 16pt;
+}
+
+.child-card p {
+  font-size: 10pt;
+  line-height: 14pt;
+}
+
+.master-info a,
+.child-card a {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 40px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+  color: white;
+  border-radius: 5px;
+  font-size: 10pt;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.master-info a:hover,
+.child-card a:hover {
+  transform: translateY(-5px);
+  letter-spacing: 2px;
+  width: 130px;
+}
+
+.child-card a {
+  font-size: 10pt;
+  height: 30px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.child-card a:hover {
+  transform: translateY(-3px);
+}
+
+.selector {
+  position: absolute;
+  opacity: 0;
+}
+
+.selector i {
+  font-size: 16pt;
+  background: none;
+  color: white;
+}
+
+#cc-1L,
+#cc-2L,
+#cc-3L,
+#cc-4L,
+#cc-5L {
+  left: 6%;
+  opacity: 0;
+  background: white;
+  transform: rotateZ(-20deg);
+  border-radius: 10px;
+}
+
+#cc-2L,
+#cc-2R {
+  top: -67px !important;
+}
+
+#cc-3L,
+#cc-3R {
+  top: -129px !important;
+}
+
+#cc-4L,
+#cc-4R {
+  top: -192px !important;
+}
+
+#cc-5L,
+#cc-5R {
+  top: -255px !important;
+}
+
+#cc-1L .selector,
+#cc-2L .selector,
+#cc-3L .selector,
+#cc-4L .selector,
+#cc-5L .selector {
+  right: -50%;
+}
+
+#cc-1R,
+#cc-2R,
+#cc-3R,
+#cc-4R,
+#cc-5R {
+  right: 6%;
+  opacity: 0;
+  transform: rotateZ(20deg);
+  background: white;
+  border-radius: 10px;
+}
+
+#cc-1R .selector,
+#cc-2R .selector,
+#cc-3R .selector,
+#cc-4R .selector,
+#cc-5R .selector {
+  left: -50%;
+}
+
+#cc-1L .selector,
+#cc-1R .selector {
+  top: 3%;
+}
+
+#cc-2L .selector,
+#cc-2R .selector {
+  top: 23%;
+}
+
+#cc-3L .selector,
+#cc-3R .selector {
+  top: 44%;
+}
+
+#cc-4L .selector,
+#cc-4R .selector {
+  top: 65.5%;
+}
+
+#cc-5L .selector,
+#cc-5R .selector {
+  top: 87%;
+}
+
+.icon-left:hover {
+  transform: translateX(5px) scale(1.1);
+}
+
+.icon-right:hover {
+  transform: translateX(-5px) scale(1.1);
+}
+
+.icon-left:focus {
+  transform: translateX(-5px) scale(1.1);
+}
+
+.icon-right:focus {
+  transform: translateX(5px) scale(1.1);
+}
+
+.icon-left:focus ~ #cc-1L,
+.icon-left:focus ~ #cc-2L,
+.icon-left:focus ~ #cc-3L,
+.icon-left:focus ~ #cc-4L,
+.icon-left:focus ~ #cc-5L {
+  left: -65%;
+  opacity: 1;
+  transform: rotateZ(0deg);
+}
+
+.icon-left:focus ~ #cc-1L > .selector,
+.icon-left:focus ~ #cc-2L > .selector,
+.icon-left:focus ~ #cc-3L > .selector,
+.icon-left:focus ~ #cc-4L > .selector,
+.icon-left:focus ~ #cc-5L > .selector {
+  right: -24%;
+  opacity: 1;
+  transition-delay: 0.17s;
+}
+
+.icon-right:focus ~ #cc-1R,
+.icon-right:focus ~ #cc-2R,
+.icon-right:focus ~ #cc-3R,
+.icon-right:focus ~ #cc-4R,
+.icon-right:focus ~ #cc-5R {
+  right: -65%;
+  opacity: 1;
+  transform: rotatez(0deg);
+}
+
+.icon-right:focus ~ #cc-1R > .selector,
+.icon-right:focus ~ #cc-2R > .selector,
+.icon-right:focus ~ #cc-3R > .selector,
+.icon-right:focus ~ #cc-4R > .selector,
+.icon-right:focus ~ #cc-5R > .selector {
+  left: -24%;
+  opacity: 1;
+  transition-delay: 0.17s;
+}
+
+.twin-row:nth-child(1) > .icon-left,
+.twin-row:nth-child(1) > .icon-right,
+.twin-row:nth-child(1) > .child-card a,
+.twin-row:nth-child(1):hover ~ .master-info > h1::before,
+.twin-row:nth-child(1):hover ~ .master-info > a {
+  background: red;
+}
+
+.twin-row:nth-child(2) > .icon-left,
+.twin-row:nth-child(2) > .icon-right,
+.twin-row:nth-child(2) > .child-card a,
+.twin-row:nth-child(2) > .child-card > .child-image::after,
+.twin-row:nth-child(2):hover ~ .master-info > .master-image::after,
+.twin-row:nth-child(2):hover ~ .master-info > a,
+.twin-row:nth-child(2):hover ~ .master-info > h1::before {
+  background: orange;
+}
+
+.twin-row:nth-child(3) > .child-card > .child-image::after,
+.twin-row:nth-child(3):hover ~ .master-info > h1::before {
+  background: yellow;
+}
+
+.twin-row:nth-child(3) > .icon-left,
+.twin-row:nth-child(3) > .icon-right,
+.twin-row:nth-child(3) > .child-card a,
+.twin-row:nth-child(3):hover ~ .master-info > .master-image::after,
+.twin-row:nth-child(3):hover ~ .master-info > a {
+  background: yellow;
+  color: black;
+}
+
+.twin-row:nth-child(4) > .icon-left,
+.twin-row:nth-child(4) > .icon-right,
+.twin-row:nth-child(4) > .child-card a,
+.twin-row:nth-child(4) > .child-card > .child-image::after,
+.twin-row:nth-child(4):hover ~ .master-info > h1::before,
+.twin-row:nth-child(4):hover ~ .master-info > .master-image::after,
+.twin-row:nth-child(4):hover ~ .master-info > a {
+  background: green;
+}
+
+.twin-row:nth-child(5) > .icon-left,
+.twin-row:nth-child(5) > .icon-right,
+.twin-row:nth-child(5) > .child-card a,
+.twin-row:nth-child(5):hover ~ .master-info > h1::before {
+  background: blue;
+}
+
+.twin-row:nth-child(5) > .child-card > .child-image::after,
+.twin-row:nth-child(5):hover ~ .master-info > .master-image::after {
+  background: blue;
+  opacity: 0.8;
+}
+
+.twin-row:nth-child(1):hover ~ .master-info > .master-image::after {
+  background: red;
+  opacity: 0.9;
+}
+
+.twin-row:nth-child(1) > .child-card {
+  border: 1px solid red;
+}
+
+.twin-row:nth-child(2) > .child-card {
+  border: 1px solid orange;
+}
+
+.twin-row:nth-child(3) > .child-card {
+  border: 1px solid yellow;
+}
+
+.twin-row:nth-child(4) > .child-card {
+  border: 1px solid green;
+}
+
+.twin-row:nth-child(5) > .child-card {
+  border: 1px solid blue;
+}
+
+.twin-row:hover ~ .master-info > h1::before {
+  width: 133px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.socials i {
+  font-size: 15pt;
+  text-shadow: 2px 2px 10px black, 1px 1px 7px black;
+  border-bottom: 2px solid transparent;
+}
+
+.socials a {
+  background: none;
+  box-shadow: none;
+}
+
+.socials a:hover > i {
+  transform: scale(1.2);
+  border-bottom: 2px solid white;
+}

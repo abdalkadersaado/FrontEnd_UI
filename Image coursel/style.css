@@ -1,0 +1,188 @@
+/* Document Styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image Preloader */
+
+.preloader {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.preloader > img {
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+
+.slider-container {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #00ff11,
+    #00fa78,
+    #00f1b8,
+    #00e6eb,
+    #00d7ff,
+    #00c6ff,
+    #00b2ff,
+    #3b9dff
+  );
+  width: 100%;
+  /* Change size of the slider here with the height property below. The HTML can be placed within a document flow. Slider container is relatively positioned, and the width should remain 100%. Images will cover the container without squishing or stretching, until reaching mobile size. They will then go to a minimum of 55% of their original height and focus on the center of the image. */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pagination {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    #00ff11cc,
+    #00fa78cc,
+    #00f1b8cc,
+    #00e6ebcc,
+    #00d7ffcc,
+    #00c6ffcc,
+    #00b2ffcc,
+    #3b9dffcc
+  );
+  padding: 10px;
+  border-radius: 20px;
+  bottom: 5%;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 7;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.pagination::after {
+  position: absolute;
+  top: -25px;
+  content: "Select Image";
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 12pt;
+  text-shadow: 1px 1px 3px black;
+}
+
+.slider-container > .pagination > label {
+  width: 25px;
+  height: 25px;
+  margin: 0px 10px;
+  background: white;
+  border-radius: 100px;
+  border: 1px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-container > .pagination > label:hover {
+  background: lawngreen;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-container > img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 55%;
+  object-fit: cover;
+  transform: scale(2);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider-container > input {
+  display: none;
+}
+
+.slider-container > input:checked + img {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider-container
+  > input:nth-child(1):checked
+  ~ .pagination
+  > label:nth-child(1),
+.slider-container
+  > input:nth-child(3):checked
+  ~ .pagination
+  > label:nth-child(2),
+.slider-container
+  > input:nth-child(5):checked
+  ~ .pagination
+  > label:nth-child(3),
+.slider-container
+  > input:nth-child(7):checked
+  ~ .pagination
+  > label:nth-child(4),
+.slider-container
+  > input:nth-child(9):checked
+  ~ .pagination
+  > label:nth-child(5) {
+  background: lawngreen;
+}
+
+/* bouncing arrow above pagination, delete this to remove */
+
+.pagination::before {
+  position: absolute;
+  content: "\2193";
+  top: -90px;
+  font-size: 40pt;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

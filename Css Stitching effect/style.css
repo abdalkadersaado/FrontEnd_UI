@@ -1,0 +1,90 @@
+html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    background: #212121;
+  }
+  header, footer {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 120px;
+    background: #1d2326;
+    box-shadow: 0 0 2px 2px #151a1c inset;
+    border-radius: 2px;
+    position: relative;
+  }
+  footer {
+    height: 80px;
+    background: #2c2b38;
+  }
+  section {
+    width: 75vw;
+    height: calc(100vh - 200px);
+    background: #343744;
+    box-shadow: 0 0 2px 2px #21232c inset;
+    border-radius: 2px;
+    position: relative;
+  }
+  aside {
+    width: 25%;
+    height: calc(100vh - 200px);
+    background: #3c4260;
+    box-shadow: 0 0 2px 2px #272b3e inset;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  *:before {
+    --hole: #171c1e;
+    --hole2: #171c1ecc;
+    --hilo: #5e5e5e;
+    content: "";
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    overflow: hidden;
+    --dot: repeating-radial-gradient(circle at 4px 4px, var(--hole) 0 3px, #fff0 4px 100%);
+    --dot2: radial-gradient(circle at 4px 4px, var(--hole2) 0 2px, #fff0 4px 100%);
+    --line: repeating-linear-gradient(90deg, #fff0 0%, var(--hilo) 8px 22px ,#fff0 100%);
+    --line2: repeating-linear-gradient(180deg, #fff0 0%, var(--hilo) 8px 22px ,#fff0 100%);
+    background: 
+      var(--dot2),
+      var(--dot2),
+      var(--dot2),
+      var(--dot2),
+      var(--line),
+      var(--line),
+      var(--line2),
+      var(--line2),
+      var(--dot),
+      var(--dot),
+      var(--dot),
+      var(--dot),
+      #f000;
+    left: 5px;
+    top: 5px;
+    border-radius: 7px;
+    background-repeat: 
+      no-repeat, no-repeat, no-repeat, no-repeat,
+      repeat-x, repeat-x, repeat-y, repeat-y,
+      repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 
+      8px 8px, 8px 8px, 8px 8px, 8px 8px,
+      30px 4px, 30px 4px, 4px 30px, 4px 30px,
+      30px 8px, 30px 8px, 8px 30px, 8px 30px;
+    background-position: 
+      0% 0px, 0% 100%, 100% 100%, 100% 0%,
+      4px 2px, 4px calc(100% - 2px), 2px 4px, calc(100% - 2px) 4px,
+      0 0, 0 100%, 0 0, 100% 0 ;
+    filter:  drop-shadow(1px -1px 1px #0008);
+  }
+  
+  
+  @media only screen and (orientation:portrait) {
+    aside, section { width: 100vw; height: calc(50vh - 100px) }
+  }

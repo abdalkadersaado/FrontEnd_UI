@@ -1,0 +1,140 @@
+body {
+  background-color: cornflowerblue;
+  font-family: Arial, Helvetica, serif;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 5% 0;
+  padding: 0.5em;
+}
+h1 {
+  margin: 0 0 1% 0;
+}
+h2 {
+  font-weight: normal;
+}
+div {
+  color: #fff;
+  font-size: 1.15em;
+  text-align: center;
+  margin-top: 2%;
+}
+ul {
+  padding: 0 0 0 1%;
+}
+ul li {
+  display: inline;
+  float: left;
+  width: 31%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 1%;
+  transition: all 0.4s ease 0s;
+  opacity: 0.3;
+}
+ul li h2 {
+  font-size: 1.5em;
+}
+span {
+  font-size: 0.9em;
+  font-family: monospace;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.2);
+  float: left;
+  width: 90%;
+  margin: 0 5% 5% 5%;
+  box-sizing: border-box;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.default {
+  width: 97%;
+  opacity: 1;
+}
+.default > span {
+  margin: -3% 2% 2% 2%;
+  width: 96%;
+  max-height: 5.5em;
+}
+
+@media screen and (max-width: 980px) {
+  body {
+    background-color: yellowgreen;
+  }
+  ul li,
+  .default {
+    width: 48%;
+    opacity: 0.3;
+  }
+  .default > span {
+    margin: 0 5% 5% 5%;
+    width: 90%;
+    max-height: none;
+  }
+  .media980 {
+    opacity: 1;
+  }
+}
+
+/******************767***************/
+@media screen and (max-width: 767px) {
+  body {
+    background-color: tomato;
+  }
+  ul li,
+  .default {
+    width: 97%;
+  }
+  .media980 {
+    opacity: 0.3;
+  }
+  .media767 {
+    opacity: 1;
+  }
+  ul li.default,
+  ul li.media980 {
+    height: 3em;
+  }
+  ul li.default span,
+  ul li.media980 span {
+    display: none;
+  }
+}
+
+/******************480***************/
+@media screen and (max-width: 480px) {
+  body {
+    background-color: orange;
+  }
+  h1 {
+    margin: 0 0 -1% 0;
+  }
+  ul li.default,
+  ul li.media980,
+  .media767 {
+    height: 3.2em;
+  }
+  .media767 {
+    opacity: 0.3;
+  }
+  .media480 {
+    opacity: 1;
+  }
+
+  ul li {
+    height: 3em;
+  }
+  ul li span {
+    display: none;
+  }
+  ul li + li + li + li {
+    height: auto;
+  }
+  ul li + li + li + li span {
+    display: block;
+  }
+}

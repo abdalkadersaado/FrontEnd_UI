@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Simple @media queries</h1>
+      </header>
+      <section>
+          <div>
+            <p>Cambia el tamaño de la ventana del navegador para ver el efecto</p>
+            <p>Resize the browser window to see the effect</p>
+        </div>
+        <ul>
+          <li class="default">
+            <h2>default</h2>
+            <span>
+              body {
+                <br>&nbsp;&nbsp;background-color: cornflowerblue;
+                <br>}
+                <br>
+                <br>
+                <br>
+            </span>
+          </li>
+          <li class="media980">
+            <h2>980px</h2>
+            <span>
+              @media screen and (max-width: 980px) {
+                <br>&nbsp;&nbsp;body {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellowgreen;
+                <br>&nbsp;&nbsp;}
+                <br>}
+            </span>
+          </li>
+          <li class="media767">
+            <h2>767px</h2>
+            <span>
+              @media screen and (max-width: 767px) {
+                <br>&nbsp;&nbsp;body {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: tomato;
+                <br>&nbsp;&nbsp;}
+                <br>}
+            </span>
+          </li>
+          <li class="media480">
+            <h2>480px</h2>
+            <span>
+              @media screen and (max-width: 480px) {
+                <br>&nbsp;&nbsp;body {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: orange;
+                <br>&nbsp;&nbsp;}
+                <br>}
+            </span>
+          </li>
+        </ul>
+      </section>
+</body>
+</html>

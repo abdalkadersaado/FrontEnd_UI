@@ -1,0 +1,40 @@
+h1, h2 {
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 150px 1fr 150px;
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-areas: 
+		"header header header"
+		"menu main sidebar"
+		"footer footer footer";
+	min-height: 100vh;
+}
+
+.header {
+	background-color: #7BBBEA;
+	grid-area: header;
+	
+}
+
+.menu {
+	grid-area: menu;
+	background-color: #CC99CC;;
+}
+
+.content {
+	background-color: #DFB2B2;
+	grid-area: main;
+}
+
+.sidebar {
+	background-color: #CC99CC;
+	grid-area: sidebar
+}
+
+.footer {
+	background-color: #7BBBEA;
+	grid-area: footer;
+}

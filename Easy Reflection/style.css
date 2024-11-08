@@ -1,0 +1,360 @@
+/* --------- document setup ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding-top: 150px;
+  background: #fafad2;
+  background-size: initial;
+}
+
+/*--------- start reflections --------- */
+
+.html-refx {
+  width: 200px;
+  height: 100px;
+  background-color: #7800a8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  bottom: 20px;
+}
+
+.html-refx::after {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 6px;
+  content: "ez reflection";
+  background-color: inherit;
+  background-image: inherit;
+  transform: translateY(100%) rotateX(180deg);
+  filter: blur(3px);
+  opacity: 0.85;
+}
+
+.icon-refx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 70pt;
+  position: relative;
+  color: purple;
+}
+
+.reflector-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(70%) rotateX(180deg);
+  filter: blur(3px);
+  opacity: 0.85;
+}
+
+.img-refx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("https://picsum.photos/400/200");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  bottom: 30px;
+}
+
+.img-refx::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transform: translateY(104%) rotateX(180deg);
+  filter: blur(3px);
+  opacity: 0.85;
+}
+
+.text-refx {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12pt;
+  color: purple;
+  width: 100%;
+  height: auto;
+}
+
+.text-refx::after {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 6px;
+  content: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.";
+  transform: translateY(90%) rotateX(180deg);
+  filter: blur(1.8px);
+  opacity: 0.7;
+}
+
+.svg-refx {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.svg-refx svg {
+  width: 100%;
+  height: auto;
+}
+
+/*for this one, convert your svg to base64 and replace the background property.*/
+
+.svg-refx::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%) rotateX(180deg);
+  top: 10px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  content: "";
+  background-repeat: norepeat;
+  filter: blur(6px);
+  opacity: 0.8;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjUuMyAxMTguODYiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYzk5N2I1O30uY2xzLTJ7ZmlsbDojMzIwMzdhO30uY2xzLTN7ZmlsbDojMWMwMDQ5O30uY2xzLTR7ZmlsbDojODcwMGZmO30uY2xzLTV7ZmlsbDojNjkwMmUyO30uY2xzLTZ7ZmlsbDojZTMwMGZmO30uY2xzLTd7ZmlsbDojYzQwMmVmO30uY2xzLTh7ZmlsbDojZmYwMGRhO30uY2xzLTl7ZmlsbDojZjQwMWU1O30uY2xzLTEwe2ZpbGw6I2ZmMDBiMTt9LmNscy0xMXtmaWxsOiNlZjAzY2M7fS5jbHMtMTJ7ZmlsbDojMDMwMDgyO30uY2xzLTEze2ZpbGw6IzAyMDY2MDt9LmNscy0xNHtmaWxsOiMxOTAwZDE7fS5jbHMtMTV7ZmlsbDojMGIwMWE4O30uY2xzLTE2e2ZpbGw6IzQ1MGU5OTt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00Mi4wNiwxMTEuMjVjMTcuNTYsMTAuMTQsNDYuMjcsMTAuMTQsNjMuODIsMHMxNy41NS0yNi43MSwwLTM2Ljg0LTQ2LjI2LTEwLjEzLTYzLjgyLDBTMjQuNTEsMTAxLjEyLDQyLjA2LDExMS4yNVoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMDcuNTgsNjRIMTcuNzNWOTEuNzJoMGMuMzcsNi4zNiw0LjcyLDEyLjY2LDEzLjA5LDE3LjQ4LDE3LjQ4LDEwLjExLDQ2LjExLDEwLjExLDYzLjYxLDAsOC4zNi00LjgyLDEyLjcxLTExLjEyLDEzLjA4LTE3LjQ4aDBaIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNzQuODgsODkuNjZ2MjYuMTVhNTcuODQsNTcuODQsMCwwLDAsMTkuNTgtNi42MWM4LjM2LTQuODIsMTIuNzEtMTEuMTIsMTMuMDgtMTcuNDhoMFY3Ni4yOFoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNy43Myw4Ni41OWMuMTkuMTIuMzcuMjQuNTcuMzVDNDIuNjksMTAxLDgyLjYxLDEwMSwxMDcsODYuOTRjLjItLjExLjM4LS4yMy41Ny0uMzVWNjRIMTcuNzNaIi8+PHBhdGggY2xhc3M9ImNscy00IiBkPSJNMTA3LDI5LjA1Yy01Ny41OC0zMy4yNC0zMy4zLTMyLTg4LjcxLDAtMjQuNCwxNC4wOS0yNC40LDM3LjEzLDAsNTEuMjJzNjQuMzEsMTQuMDksODguNzEsMFMxMzEuNCw0My4xNCwxMDcsMjkuMDVaIi8+PHBhdGggY2xhc3M9ImNscy01IiBkPSJNMTA3LDgwLjI3YzI0LjM5LTE0LjA5LDI0LjM5LTM3LjEzLDAtNTEuMjItNTcuNTgtMzMuMjQtMzMuMy0zMi04OC43MSwwIi8+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNOTcuMTgsMjIuNDNjLTQ0LjgyLTI1Ljg4LTI1LjkyLTI0LjkyLTY5LjA1LDAtMTksMTEtMTksMjguOSwwLDM5Ljg3czUwLjA1LDExLDY5LjA1LDBTMTE2LjE2LDMzLjQsOTcuMTgsMjIuNDNaIi8+PHBhdGggY2xhc3M9ImNscy03IiBkPSJNOTcuMTgsNjIuM2MxOS0xMSwxOS0yOC45LDAtMzkuODctNDQuODItMjUuODgtMjUuOTItMjQuOTItNjkuMDUsMCIvPjxwYXRoIGNsYXNzPSJjbHMtOCIgZD0iTTM4LDQzLjc4YzEzLjUzLDcuODIsMzUuNjksNy44Miw0OS4yMywwczEzLjU0LTIwLjYxLDAtMjguNDNjLTMyLTE4LjQ2LTE4LjQ4LTE3Ljc4LTQ5LjIzLDBDMjQuNDksMjMuMTcsMjQuNDksMzYsMzgsNDMuNzhaIi8+PHBhdGggY2xhc3M9ImNscy05IiBkPSJNODcuMjcsNDMuNzhjMTMuNTQtNy44MiwxMy41NC0yMC42MSwwLTI4LjQzLTMyLTE4LjQ2LTE4LjQ4LTE3Ljc4LTQ5LjIzLDAiLz48cGF0aCBjbGFzcz0iY2xzLTEwIiBkPSJNNzkuMTUsOS4xYy0yMS40Mi0xMi4zNi0xMi4zOS0xMS45LTMzLDAtOS4wOCw1LjI0LTkuMDgsMTMuODEsMCwxOXMyMy45MSw1LjI0LDMzLDBTODguMjEsMTQuMzQsNzkuMTUsOS4xWiIvPjxwYXRoIGNsYXNzPSJjbHMtMTEiIGQ9Ik03OS4xNSwyOC4xNWM5LjA2LTUuMjQsOS4wNi0xMy44MSwwLTE5LTIxLjQyLTEyLjM2LTEyLjM5LTExLjktMzMsMCIvPjxwYXRoIGNsYXNzPSJjbHMtNiIgZD0iTTM1LjgsODguNjZjLTIuODEtMS42My01LjEyLS4zLTUuMTIsM1YxMDkuMWwuMTcuMWE1MC44Nyw1MC44NywwLDAsMCwxMC4wNyw0LjM3di0xNkExMS4zNCwxMS4zNCwwLDAsMCwzNS44LDg4LjY2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMTIiIGQ9Ik0zNS44LDkxYy0yLTEuMTctMy42OS0uMjEtMy42OSwyLjEzVjEwOS45YTUxLjY1LDUxLjY1LDAsMCwwLDcuMzgsMy4yVjk3LjQyQTguMTksOC4xOSwwLDAsMCwzNS44LDkxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMTMiIGQ9Ik0zNS44LDkxYy0yLTEuMTctMy42OS0uMjEtMy42OSwyLjEzTDM4LDExMi41NmMuNDkuMTksMSwuMzYsMS40OS41NFY5Ny40MkE4LjE5LDguMTksMCwwLDAsMzUuOCw5MVoiLz48cGF0aCBjbGFzcz0iY2xzLTE0IiBkPSJNMzUuOCw5MWEzLjIsMy4yLDAsMCwwLTEuNzItLjQ3LDMsMywwLDAsMC0uNTQsMS44NnYxOC4yMWE1NC41Nyw1NC41NywwLDAsMCw2LDIuNDdWOTcuNDJBOC4xOSw4LjE5LDAsMCwwLDM1LjgsOTFaIi8+PHBhdGggY2xhc3M9ImNscy0xNSIgZD0iTTM1LjgsOTFhMy4yLDMuMiwwLDAsMC0xLjcyLS40NywzLDMsMCwwLDAtLjU0LDEuODZsNS4xNywyMC40Ljc4LjI4Vjk3LjQyQTguMTksOC4xOSwwLDAsMCwzNS44LDkxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMTYiIGQ9Ik00Ny4yNywxMDMuMzNhMS4yLDEuMiwwLDEsMS0xLjE2LTEuNUExLjM2LDEuMzYsMCwwLDEsNDcuMjcsMTAzLjMzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMTYiIGQ9Ik0yNC4zNiw5NS4zM2ExLjM2LDEuMzYsMCwwLDEtMS4xNywxLjUsMS41NSwxLjU1LDAsMCwxLDAtM0ExLjM2LDEuMzYsMCwwLDEsMjQuMzYsOTUuMzNaIi8+PGVsbGlwc2UgY2xhc3M9ImNscy0xNiIgY3g9IjUwLjQzIiBjeT0iMTA3LjczIiByeD0iMS4xNyIgcnk9IjEuNSIvPjxwYXRoIGNsYXNzPSJjbHMtMTYiIGQ9Ik01NSwxMDYuNzZhLjc4Ljc4LDAsMSwxLS43NS0xQS44OC44OCwwLDAsMSw1NSwxMDYuNzZaIi8+PHBhdGggY2xhc3M9ImNscy0xNiIgZD0iTTI2LjM2LDk5LjYxYS43Ny43NywwLDEsMS0xLjUsMCwuNzcuNzcsMCwxLDEsMS41LDBaIi8+PHBhdGggY2xhc3M9ImNscy0xNiIgZD0iTTU3LDEwMi4zNGExLjIsMS4yLDAsMSwxLTEuMTYtMS41MUExLjM2LDEuMzYsMCwwLDEsNTcsMTAyLjM0WiIvPjxwYXRoIGNsYXNzPSJjbHMtMTYiIGQ9Ik02NC41NCwxMDMuMzNhMS4yLDEuMiwwLDEsMS0xLjE2LTEuNUExLjM2LDEuMzYsMCwwLDEsNjQuNTQsMTAzLjMzWiIvPjxlbGxpcHNlIGNsYXNzPSJjbHMtMTYiIGN4PSI2MS40OCIgY3k9IjEwOS4yMyIgcng9IjEuMTciIHJ5PSIxLjUiLz48L2c+PC9nPjwvc3ZnPg==");
+}
+
+/*-------------------------------------------------------*/
+/* ---Below is just for demo. Not needed for reflxns---- */
+/*-------------------------------------------------------*/
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  height: auto;
+  position: relative;
+  right: 40px;
+}
+
+@media screen and (min-width: 992px) {
+  .container-row:nth-child(2) {
+    margin-top: 220px;
+  }
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+}
+
+.contain-svg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1500px) {
+  .svg-refx {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .refx-row {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1123px) {
+  .container-row {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    height: auto;
+    padding-top: 50px;
+  }
+  .container-row {
+    justify-content: space-between;
+    flex-direction: column;
+    right: unset;
+  }
+  .container-row:nth-child(2) {
+    margin-top: 80px;
+  }
+  .contain,
+  .contain-svg {
+    padding: 120px 10px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .contain-svg {
+    padding: 300px 10px;
+  }
+}
+
+.html-refx::before {
+  position: absolute;
+  content: "Reflect a div!";
+  top: -50px;
+  left: 45px;
+  color: purple;
+  font-size: 12pt;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.icon-refx::before {
+  position: absolute;
+  content: "Reflect an <i> icon!";
+  top: -50px;
+  left: -20;
+  color: purple;
+  font-size: 12pt;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.img-refx::before {
+  position: absolute;
+  content: "Reflect an image!";
+  top: -50px;
+  left: -20;
+  color: purple;
+  font-size: 12pt;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.text-refx::before {
+  position: absolute;
+  content: "Reflect text!";
+  top: -50px;
+  left: -20;
+  color: purple;
+  font-size: 12pt;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.svg-refx::before {
+  position: absolute;
+  content: "Reflect an SVG!";
+  top: -50px;
+  left: -20;
+  color: purple;
+  font-size: 12pt;
+  font-weight: 700;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.cls-1 {
+  fill: #c997b5;
+}
+.cls-2 {
+  fill: #32037a;
+}
+.cls-3 {
+  fill: #1c0049;
+}
+.cls-4 {
+  fill: #8700ff;
+}
+.cls-5 {
+  fill: #6902e2;
+}
+.cls-6 {
+  fill: #e300ff;
+}
+.cls-7 {
+  fill: #c402ef;
+}
+.cls-8 {
+  fill: #ff00da;
+}
+.cls-9 {
+  fill: #f401e5;
+}
+.cls-10 {
+  fill: #ff00b1;
+}
+.cls-11 {
+  fill: #ef03cc;
+}
+.cls-12 {
+  fill: #030082;
+}
+.cls-13 {
+  fill: #020660;
+}
+.cls-14 {
+  fill: #1900d1;
+}
+.cls-15 {
+  fill: #0b01a8;
+}
+.cls-16 {
+  fill: #450e99;
+}

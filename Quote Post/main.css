@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto&family=Satisfy&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(#fff0 50% , #000), #000;
+	box-shadow: 200px 50px 100px 100px #000 inset, 200px -50px 100px 100px #000 inset;
+}
+
+.content {
+	background: url(https://i.guim.co.uk/img/media/01b7b459379f2d444fe6ad75471f7e428cd52728/0_134_3504_2102/master/3504.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=30c7afeca387a76007b2230bf40ada74) no-repeat calc(100% + 585px) center,
+		url(https://i.guim.co.uk/img/media/01b7b459379f2d444fe6ad75471f7e428cd52728/0_134_3504_2102/master/3504.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=30c7afeca387a76007b2230bf40ada74) no-repeat calc(0% - 615px) center	;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content div {
+	--shdw: #3338;
+	color: #fff;
+	font-size: 7vw;
+	line-height: 7.5vw;
+	position: relative;
+	font-family: 'Roboto', cursive;
+	text-shadow: 0.2vw 0.2vw 0.1vw var(--shdw);
+	padding-left: 5vw;
+}
+
+.content div:first-child {
+	transform: scaleY(0.75) scaleX(1.1);
+	line-height: 5vw;
+	margin-top: -5vh;
+}
+
+.content div.vacation {
+	font-family: 'Satisfy', cursive;
+	color: #008eff;
+	font-weight: bold;
+	font-size: 7.1vw;
+	--shdw: #008eff80;
+	transform: skewX(10deg);
+}
+
+.vacation + div {
+	font-size: 4.1vw;
+	line-height: 3.5vw;
+}
+
+.content div.nightmare {
+	font-family: 'Creepster', cursive;
+	color: #ed1432;
+	font-size: 7.25vw;
+	line-height: 6vw;
+	float: right;
+	font-weight: normal;	
+	--shdw: #ed143280;
+}
+
+.content:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, #000 5vh, #fff0 50vh, #000 95vh);
+}
+
+.content div:first-child:before,
+.content div:last-child:before {
+	content: "\201C";
+	position: absolute;
+	font-size: 10vw;
+	left: 1.5vw;
+	top: 0;
+	color: #333;
+	transform: scaleY(1.5);
+}
+
+.content div:last-child:before {
+	content: "\201D";
+	float: right;
+	font-family: 'Roboto' , cursive;
+	right: -4.5vw;
+	left: inherit;
+	color: #333;
+	transform: none;
+	text-shadow: 3px 3px 2px #3338;
+}
+
+.content div:last-child:after {
+	content: "Jim Bridwell";
+	float: right;
+	font-family: 'Roboto' , cursive;
+	right: calc(300px - 5vw);
+	left: inherit;
+	color: #fff;
+	font-size: 2.5vw;
+	position: absolute;
+	bottom: -8vw;
+	right: 0.5vw;
+	text-shadow: 2px 2px 2px #3338;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.content {
+		background: url(https://i.guim.co.uk/img/media/01b7b459379f2d444fe6ad75471f7e428cd52728/0_134_3504_2102/master/3504.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=30c7afeca387a76007b2230bf40ada74) no-repeat calc(100% + 585px) center;
+		align-items: flex-start;
+		padding-left: 3vw;
+	}
+	.content div {
+		font-size: 7vw;
+	}
+	.content .vacation + div {
+		font-size: 4.2vw;
+	}
+}

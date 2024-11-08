@@ -1,0 +1,39 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #5D8B8D;
+  }
+  
+  svg {
+    height: 100vh;
+    max-height: 600px;
+    max-width: 80vw;
+    margin: 0 auto;
+    display: table;
+  }
+  
+  #tv, #radio, #starfish, #berries1, #berries2, #berries3, #burst, #flowers1, #flowers2, #skulls, #shadow, #glitch, #magnolia, #lights {
+    visibility: hidden;
+  }
+  
+  #lights {
+    opacity: 0.7 !important;
+  }
+  
+  #string1, #string2, #string3, #string4, #string5 {
+    opacity: 0.3 !important;
+  }
+  
+  #button {
+    cursor: pointer;
+  }
+  
+  #button:hover {
+    opacity: 0.8;
+  }
+  
+  #gear {
+    position: absolute;
+    cursor: move; 
+  }
+  

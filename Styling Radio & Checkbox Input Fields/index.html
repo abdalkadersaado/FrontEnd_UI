@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Styling Radio & Checkbox Input Fields</h1>
+
+<h2>Create custom styles for inputs with CSS only</h2>
+
+<form>
+	<div class="content">
+		<fieldset>
+			<legend class="radio">Radio</legend>
+			<div class="container">
+				<ul>
+					<li>
+						<input type="radio" id="radio1" name="radio01">
+						<label for="radio1">Empty</label>
+					</li>
+					<li>
+						<input type="radio" id="radio2" name="radio01" checked="checked">
+						<label for="radio2">Checked</label>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<input type="radio" id="radio3" name="radio02" disabled="disabled">
+						<label for="radio3">Empty Disabled</label>
+					</li>
+					<li>
+						<input type="radio" id="radio4" name="radio02" disabled="disabled" checked="checked">
+						<label for="radio4">Checked Disabled</label>
+					</li>
+				</ul>
+			</div>
+		</fieldset>
+	</div>
+
+	<div class="content">
+		<fieldset>
+			<legend>Checkbox</legend>
+			<div class="container">
+				<ul>
+					<li>
+						<input type="checkbox" id="checkbox1" name="checkbox01">
+						<label for="checkbox1">Empty</label>
+					</li>
+					<li>
+						<input type="checkbox" id="checkbox2" name="checkbox01" checked="checked">
+						<label for="checkbox2">Checked</label>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<input type="checkbox" id="checkbox3" name="checkbox02" disabled="disabled">
+						<label for="checkbox3">Disabled</label>
+					</li>
+					<li>
+						<input type="checkbox" id="checkbox4" name="checkbox02" disabled="disabled" checked="checked">
+						<label for="checkbox4">Checked Disabled</label>
+					</li>
+				</ul>
+			</div>
+		</fieldset>
+	</div>
+</form>
+</body>
+</html>

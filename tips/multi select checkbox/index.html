@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+ * inspiration and original html code
+   - https://gomakethings.com/javascript-free-accordions/
+   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-multiselectable
+-->
+<fieldset>
+    <label for="pick-one">Pick One</label>
+    <select id="pick-one">
+        <option value="">Zero</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+        <option value="6">Six</option>
+        <option value="7">Seven</option>
+        <option value="8">Eight</option>
+        <option value="9">Nine</option>
+    </select>
+    <br>
+    <br>
+    <label>Pick Many</label>
+    <details>
+        <summary>Choose your favorite colors</summary>
+        <ul>
+            <li>
+                <label><input type="checkbox" name="fc" value="red" checked />Red</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="orange" />Orange</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="yellow" />Yellow</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="green" />Green</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="blue" checked />Blue</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="purple" />Purple</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="magenta" />Hot pink</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="lightpink" />Light
+                    pink</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="white" checked />White</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="lightblue" />Light
+                    blue</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="black" />Black</label>
+            </li>
+            <li>
+                <label><input type="checkbox" name="fc" value="brown" />Brown</label>
+            </li>
+        </ul>
+    </details>
+</fieldset>
+</body>
+</html>

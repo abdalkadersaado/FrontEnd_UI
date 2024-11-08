@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #fff 10%, #607d8b 50%, #fff 100%);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	background: linear-gradient(to right, #ff8b1c, #ff8b1c 25%, #121212 25%);
+	height: 16vh;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+#logo {
+	width: 13vmin;
+	background: #ff8b1c;
+	padding: 1.5vmin;
+	transform: rotate(-90deg);
+	height: 14vmin;
+	margin-left: -20vmin;
+	margin-top: -1vh;
+	z-index: -1;
+	position: absolute;
+}
+
+#brand-name,
+.tagline {
+	float: left;
+	margin: 0.5vmin 0;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 8.5vmin;
+	z-index: 2;
+	position: relative;
+}
+
+.tagline {
+	font-size: 2vmin;
+	margin: -0.65em 0 0 0;
+	color: #ff8b1c;
+	text-shadow: -1px -1px 0 #000;
+	box-sizing: border-box;
+}
+
+section {
+	padding: 2vmin;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+h2 {
+	margin: 0;
+	font-size: 4vmin;
+	text-align: center;
+	font-weight: normal;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	text-shadow: 0px 1px 1px #fff, 0 0 1px #fff;
+}
+
+.category-description {
+	text-align: center;
+	color: #3f51b5;
+	font-size: 2vmin;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	text-shadow: 0px 1px 1px #fff, 0 0 1px #fff;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.item {
+	display: inline-table;
+	width: 31.5%;
+	background: white;
+	margin: 2% 2% 0 0%;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em,
+		rgb(0 0 0 / 25%) 0px 0.125em 0.5em,
+		rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
+}
+
+.item:last-of-type {
+	margin-right: 0;
+}
+
+h3 {
+	position: absolute;
+	margin: 0;
+	color: #ffffff;
+	z-index: 1;
+	background: #e10102;
+	padding: 0.5vmin 0.75vmin;
+	border-radius: 0 0 1px 0;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.item:first-of-type h3 {
+	background: #000065;
+}
+
+.item:last-of-type h3 {
+	background: #000000;
+}
+
+figcaption {
+	margin-top: -2.25vmin;
+	font-size: 0.75em;
+	color: #00000080;
+	text-shadow: -1px 1px 0 #ffffff80;
+	padding-right: 0.5vmin;
+	float: right;
+	position: relative;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+figure {
+	margin: 0;
+	overflow: hidden;
+}
+
+figure img {
+	width: 100%;
+	transform: scale(1) rotate(0deg);
+	transition: transform 0.5s ease 0s;
+	animation: zoom-image 3s ease 0s 1;
+}
+
+figure:hover img {
+	transform: scale(2) rotate(5deg);
+	transition: transform 0.5s ease 0s;
+}
+
+.item + .item figure img {
+	animation-delay: 0.65s;
+}
+
+.item + .item + .item figure img {
+	animation-delay: 1.3s;
+}
+
+.description {
+	margin: 1vmin;
+	color: #666;
+	font-size: 0.9em;
+	max-height: 3.5em;
+	overflow: hidden;
+	height: 18vh;
+	transition: max-height 0.5s ease 0s;
+	position: relative;
+	text-indent: 1.5em;
+}
+
+.more {
+	background: #fff0;
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	left: 1vmin;
+	z-index: 1;
+	margin-top: 1vmin;
+	cursor: cell;
+}
+
+.more:hover + .description {
+	max-height: 18vh;
+	transition: max-height 0.5s ease 0s;
+}
+
+.description:before {
+	content: " + ";
+	float: right;
+	position: absolute;
+	left: 0;
+	top: 0em;
+	font-size: 1.2em;
+	height: 0.9em;
+	width: 0.9em;
+	border-radius: 1px;
+	line-height: 0.95em;
+	text-align: center;
+	transition: top 0.5s ease 0s;
+	text-indent: 0;
+	font-weight: bold;
+	background: #3f51b5;
+	color: #fff;
+}
+.more:hover + .description:before {
+	content: " - ";
+	line-height: 0.8em;
+}
+
+.description:after {
+	content: "...";
+	opacity: 1;
+	line-height: 0.8em;
+	position: absolute;
+	top: 2.4em;
+	right: 0;
+	transition: opacity 0.5s ease 0s;
+}
+
+.more:hover + .description:after {
+	content: "  ";
+	opacity: 0;
+	transition: opacity 0.5s ease 0s;
+}
+
+.price {
+	margin: 1vmin;
+	background: #3f51b5;
+	padding: 1vmin;
+	color: #fff;
+	float: right;
+	width: 6em;
+	text-align: right;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.price strong {
+	font-size: 1.35em;
+	line-height: 0.5em;
+	top: 0.25vmin;
+	position: relative;
+	font-weight: normal;
+}
+
+.special {
+	margin: 1vmin;
+	display: inline-flex;
+	background: green;
+	float: left;
+	width: calc(100% - 10.25em);
+	padding: 1vmin;
+	color: #fff;
+	margin-right: 0;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.special.empty {
+	background: transparent;
+}
+
+label {
+	margin: 1vmin;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	margin-right: 0;
+	padding: 0.75em 0.35em 0.75em 0.35em;
+	border-right: 1px solid #666;
+	color: #444;
+	z-index: 2;
+	position: relative;
+	pointer-events: none;
+}
+
+select {
+	margin: 1vmin;
+	margin-left: 0vmin;
+	border: 1px solid #666666;
+	border-radius: 1px;
+	height: 3em;
+	outline: none;
+	text-transform: uppercase;
+	margin-right: 0;
+	cursor: pointer;
+	font-size: 0.75em;
+}
+
+select[name="size"] {
+	padding-left: 3em;
+	margin-left: -3em;
+	z-index: 1;
+	position: relative;
+	width: calc(33% - 2vmin);
+}
+
+select[name="color"] {
+	padding-left: 4.75em;
+	margin-left: -4.35em;
+	z-index: 1;
+	position: relative;
+	width: calc(67% - 1vmin);
+}
+
+select[name="quantity"] {
+	padding-left: 6em;
+	margin-left: -5.85em;
+	z-index: 1;
+	position: relative;
+	width: calc(38% - 2vmin);
+}
+
+select option:disabled {
+	background: #c1c1c1;
+}
+
+button {
+	border: 0;
+	background: #ff8b1c;
+	color: #fff;
+	text-transform: uppercase;
+	float: right;
+	margin-right: 1vmin;
+	margin-bottom: 1vmin;
+	padding: 1vmin;
+	margin-top: 1vmin;
+	width: 58.5%;
+	cursor: pointer;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	position: relative;
+	text-align: left;
+}
+
+button:hover {
+	background: #222;
+}
+
+button:after {
+	content: "+";
+	background: #212121;
+	width: 1.5em;
+	float: right;
+	text-align: center;
+	font-size: 2em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+
+@keyframes zoom-image {
+	0% {
+		transform: scale(1) rotate(0deg);
+		transition: transform 0.5s ease 0s;
+	}
+	60% {
+		transform: scale(2) rotate(5deg);
+		transition: transform 0.5s ease 0s;
+	}
+	100% {
+		transform: scale(1) rotate(0deg);
+		transition: transform 0.5s ease 0s;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	header {
+		background: linear-gradient(to right, #ff8b1c, #ff8b1c 15%, #121212 15%);
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	header {
+		background: linear-gradient(to right, #ff8b1c, #ff8b1c 25%, #121212 25%);
+	}
+	.item {
+		width: 48.5%;
+	}
+	.item + .item {
+		margin-right: 0;
+	}
+	figcaption {
+		margin-top: -3.5vmin;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.item {
+		width: 99.5%;
+	}
+	.item {
+		margin-right: 0;
+	}
+	button {
+		height: 2.75em;
+	}
+	figcaption {
+		margin-top: -5vmin;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	select {
+		width: calc(100% - 2.5vmin) !important;
+		float: right;
+		margin-right: 1vmin;
+	}
+	label {
+		float: left;
+	}
+	.price,
+	.special {
+		width: calc(100% - 4vmin);
+	}
+	button {
+		width: calc(100% - 2vmin);
+		height: 2.5em;
+	}
+	button:after {
+		line-height: 1.15em;
+	}
+}

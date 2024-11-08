@@ -1,0 +1,507 @@
+*:not(head),
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --theme: linear-gradient(
+    135deg,
+    #5e4f30bb,
+    #615233bb,
+    #6b5a3abb,
+    #796746bb,
+    #8b7754bb,
+    #a08a65bb,
+    #b69d77bb,
+    #ccb089bb,
+    #e0c299bb,
+    #f0d1a7bb,
+    #fbdab0bb,
+    #ffdeb3bb
+  );
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ffdeb3bb;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #ffdeb355;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background: #444;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main a,
+main a::before,
+main a::after,
+main a:hover::before,
+main a:hover::after,
+main a:hover {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+main a:hover {
+  cursor: pointer;
+}
+
+main a:active {
+  transform: translateY(3px) scale(0.95);
+  color: inherit;
+  transition: unset !important;
+}
+
+main,
+main ul,
+main li,
+main p,
+main a,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+#mzb-accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 1300px;
+  padding: 40px;
+  background: var(--theme);
+  margin: 40px 0px;
+  border-radius: 20px;
+}
+
+#mzb-accordion input {
+  display: none;
+}
+
+#mzb-accordion ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: unset;
+}
+
+#mzb-accordion ul li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0px;
+  border-bottom: 2px solid white;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 20px;
+  z-index: 1;
+  transition: all 0.7s ease-in-out;
+}
+
+#mzb-accordion ul li:nth-child(1) {
+  background: url("https://picsum.photos/id/71/1500/500");
+  border-radius: 20px 20px 0 0;
+}
+
+#mzb-accordion ul li:nth-child(2) {
+  background: url("https://picsum.photos/id/351/1500/500");
+}
+
+#mzb-accordion ul li:nth-child(3) {
+  background: url("https://picsum.photos/id/451/1500/500");
+}
+
+#mzb-accordion ul li:nth-child(4) {
+  background: url("https://picsum.photos/id/116/1500/500");
+}
+
+#mzb-accordion ul li:nth-child(5) {
+  background: url("https://picsum.photos/id/251/1500/500");
+}
+
+#mzb-accordion ul li:nth-child(6) {
+  background: url("https://picsum.photos/id/851/1500/500");
+  border-radius: 0 0 20px 20px;
+}
+
+#mzb-accordion ul li:last-of-type {
+  margin-bottom: 0px;
+}
+
+#mzb-accordion ul li::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: "";
+  backdrop-filter: grayscale(80%);
+  transition: all 0.3s ease-in-out;
+}
+
+#mzb-accordion ul li label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#mzb-accordion ul li label:hover {
+  cursor: pointer;
+}
+
+#mzb-accordion ul li svg {
+  position: absolute;
+  fill: black;
+  width: 40px;
+  height: auto;
+  top: 45px;
+  right: 40px;
+  z-index: 9;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion ul li div {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--theme);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+#mzb-accordion ul li div h2 {
+  position: relative;
+  font-size: 30pt;
+  line-height: 40pt;
+  color: white;
+  margin: 0;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+#mzb-accordion ul li label:hover ~ div h2 {
+  padding-left: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+#mzb-accordion ul li:nth-child(1) {
+  --accent: #a97a25;
+}
+
+#mzb-accordion ul li:nth-child(2) {
+  --accent: #964f32;
+}
+
+#mzb-accordion ul li:nth-child(3) {
+  --accent: #a6b5d0;
+}
+
+#mzb-accordion ul li:nth-child(4) {
+  --accent: #938f95;
+}
+
+#mzb-accordion ul li:nth-child(5) {
+  --accent: #dec99a;
+}
+
+#mzb-accordion ul li:nth-child(6) {
+  --accent: #146c8a;
+}
+
+#mzb-accordion ul li div h2::before {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: var(--accent);
+  margin-right: 800px;
+  bottom: 0;
+  border-radius: 100%;
+  content: "";
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+#mzb-accordion ul li label:hover ~ div h2::before {
+  margin-right: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+#mzb-accordion ul li div h2::after {
+  position: absolute;
+  width: 130%;
+  height: 100%;
+  content: "";
+  background: var(--accent);
+  margin-right: 1000px;
+  z-index: -2;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion ul li p {
+  font-size: 12pt;
+  line-height: 20pt;
+  margin: 25px 0px;
+  color: white;
+}
+
+#mzb-accordion ul li a {
+  position: relative;
+  background: white;
+  padding: 5px 10px;
+  font-size: 12pt;
+  margin-bottom: 10px;
+  color: black;
+  overflow: hidden;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#mzb-accordion ul li a::after {
+  position: absolute;
+  top: 80%;
+  right: 110%;
+  background: var(--accent);
+  width: 100%;
+  height: 100%;
+  border-radius: 0 5px 0 0;
+  z-index: -1;
+  content: "";
+}
+
+#mzb-accordion ul li a:hover::after {
+  top: 0;
+  right: 0;
+}
+
+#mzb-accordion ul li a:hover {
+  color: white;
+}
+
+#mzb-accordion ul > li > div *:not(h2) {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion ul > li > div {
+  max-height: 90px;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) {
+  margin-bottom: 60px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-bottom: 10px solid var(--accent);
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2),
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3),
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4),
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 20px;
+  border-bottom: 10px solid var(--accent);
+  transition: all 0.4s ease-in-out;
+}
+
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) {
+  margin-top: 60px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-bottom: 10px solid var(--accent);
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > div *:not(h2),
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > div *:not(h2),
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div *:not(h2),
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > div *:not(h2),
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div *:not(h2),
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > div *:not(h2) {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1)::after,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2)::after,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3)::after,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4)::after,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5)::after,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6)::after {
+  backdrop-filter: grayscale(0%);
+  transition: all 0.3s ease-in-out;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > div,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > div,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > div,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > div {
+  background: #00000099;
+  max-height: 800px;
+  /* If adding content text longer than the third item in demo, increase the max-height value so it fits properly on mobile devices. */
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > label,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > label,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > label,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > label,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > label,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > label {
+  display: none;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > svg,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > svg,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > svg,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > svg,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > svg,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > svg {
+  transform: rotateZ(180deg) translateY(3px);
+  fill: white;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > div > h2,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > div > h2,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div > h2,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > div > h2,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div > h2,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > div > h2 {
+  margin-right: 0px;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div > h2,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div > h2 {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div > a:hover,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div > a:hover {
+  color: black;
+}
+
+#mzb-accordion #mzb-1:checked ~ ul > li:nth-child(1) > div > h2::after,
+#mzb-accordion #mzb-2:checked ~ ul > li:nth-child(2) > div > h2::after,
+#mzb-accordion #mzb-3:checked ~ ul > li:nth-child(3) > div > h2::after,
+#mzb-accordion #mzb-4:checked ~ ul > li:nth-child(4) > div > h2::after,
+#mzb-accordion #mzb-5:checked ~ ul > li:nth-child(5) > div > h2::after,
+#mzb-accordion #mzb-6:checked ~ ul > li:nth-child(6) > div > h2::after {
+  margin-right: 0;
+  border-radius: 0 10px 10px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 1340px) {
+  #mzb-accordion {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 660px) {
+  #mzb-accordion {
+    padding: 25px;
+  }
+  #mzb-accordion ul li div h2 {
+    font-size: 20pt;
+    line-height: 30pt;
+    color: white;
+  }
+  #mzb-accordion ul > li > div {
+    max-height: 80px;
+  }
+  #mzb-accordion ul li svg {
+    width: 30px;
+    top: 45px;
+  }
+}
+
+@media (max-width: 450px) {
+  #mzb-accordion ul li label:hover ~ div h2 {
+    padding-left: 0px;
+    transition: all 0.2s ease-in-out;
+  }
+  #mzb-accordion ul li label:hover ~ div h2::before {
+    margin-right: 1000px;
+  }
+  #mzb-accordion ul li div h2 {
+    font-size: 16pt;
+    line-height: 26pt;
+    color: white;
+  }
+  #mzb-accordion ul > li > div {
+    max-height: 75px;
+  }
+}
+
+@media (max-width: 400px) {
+  #mzb-accordion ul li svg {
+    display: none;
+  }
+}

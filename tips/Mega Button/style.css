@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+ 
+* {
+  box-sizing: border-box;	
+  transform-style: preserve-3d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #101010, #444);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 90vmin;
+  height: 44vmin;
+  perspective: 100vmin;
+}
+
+.base {
+  background: linear-gradient(90deg, #888 10%, #999 80%, #fff 90%, #ccc 100%);
+  width: 100%;
+  height: 36vmin;
+  bottom: 0;
+  position: absolute;
+  border-radius: 14vmin;
+  border-bottom: 0.25vmin solid #303030;
+  box-shadow: 2vmin 0 2vmin 0 #0008 inset, -0.25vmin 0.25vmin 0.5vmin 0.25vmin #000c, 0vmin 1vmin 1vmin 0 #fff4;
+}
+
+.base:before {
+  content: "";
+  width: 100%;
+  height: 85%;
+  background: linear-gradient(90deg, #999 10%, #ccc 80%, #fff 90%, #eee 100%);
+  position: absolute;
+  border-radius: 14vmin;
+  top: 0vmin;
+  z-index: -1;
+  border: 0.25vmin solid #adadad;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 90%;
+  height: 32vmin;
+  background: linear-gradient(86deg, #564672 10%, #7b64a3 60%, #b696ed 88%, #9e78df 100%);
+  border-radius: 12vmin;
+  left: 5%;
+  position: absolute;
+  bottom: 10vmin;
+  box-shadow: 2vmin 0 2vmin 0 #0008 inset;
+  border-bottom: 0.25vmin solid #0008;
+  transition: all 0.25s ease 0s;
+}
+
+.btn:before {
+  content: "";
+  width: 100%;
+  height: 25vmin;
+  background: linear-gradient(84deg, #7c65a5 10%, #9c7fcf 60%, #d1b6ff 87%, #ba92ff 100%);
+  position: absolute;
+  border-radius: 14vmin;
+  top: -2vmin;
+  z-index: -1;
+  border: 0.15vmin solid #3333338a;
+  box-sizing: border-box;
+  border-bottom-width: 0.25vmin;
+}
+
+.btn:after {
+  text-align: center;
+  content: "MEGA BUTTON";
+  width: 100%;
+  height: 25vmin;
+  position: absolute;
+  border-radius: 14vmin;
+  top: -2vmin;
+  z-index: -1;
+  box-sizing: border-box;
+  border-bottom-width: 0.25vmin;
+  font-family: 'Londrina Solid', Arial, Helvetica, serif;
+  font-size: 11vmin;
+  line-height: 22vmin;
+  transform: rotateX(10deg);
+  transform-origin: center top;
+  color: #d6bfff;
+  font-weight: bold;
+  letter-spacing: 0.5vmin;
+  text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+
+
+
+
+input { display: none; }
+
+label {
+  width: 90%;
+  height: 34vmin;
+  position: absolute;
+  border-radius: 12vmin;
+  top: 0;
+  left: 5%;
+  z-index: 2;
+  cursor: pointer;
+  transform-origin: center top;
+  transform: rotateX(10deg);
+}
+
+input:checked + label {
+  height: 30vmin;
+  top: 4vmin;
+  transform: rotateX(13deg);
+}
+
+input:checked ~ .btn {
+  height: 28vmin;
+  transition: all 0.25s ease 0s;
+  text: shadow(2vmin 0 2vmin 0 #0008 inset, 0 1vmin 10vmin 1vmin #7d34ff) 
+}
+
+label:active ~ .btn {
+  height: 26vmin;
+  transition: all 0.25s ease 0s;
+}
+
+input:checked ~ .btn:after {
+  color: #ede2ff;
+  transform: rotateX(13deg);
+  text-shadow: 0 0 5vmin #6321f1, 0 0 5vmin #fff8, 0px 1px 0px #c2b8d3, 0px 2px 0px #a99dbf, 0px 3px 0px #9281b1, 0px 4px 0px #7c7091, 0px 5px 0px #554c66, 0px 6px 0px #4d4162, 0px 7px 0px #1f0b42, 0px 8px 7px #15013a;
+}
+
+input:checked ~ .btn:before {
+  box-shadow: 0 0 2vmin #0000004a, 0 0 10vmin 5vmin #b68dff, 0 0 10vmin 5vmin #d8c3ff inset;
+}

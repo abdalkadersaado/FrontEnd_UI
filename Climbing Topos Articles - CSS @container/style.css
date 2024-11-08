@@ -1,0 +1,234 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+body {
+	margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Courier Prime', monospace;
+    background: #242f34;
+    letter-spacing: -2px;
+    word-spacing: -4px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+body * { 
+	box-sizing: border-box; 
+}
+
+
+a { 
+	text-decoration: none; 
+}
+
+
+.content {
+	container-type: inline-size;
+	container-name: content;
+	background: #fff0;
+	width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.article {
+	container-type: inline-size;
+	container-name: article;
+	overflow: auto;
+	margin: 1rem auto;
+	background: linear-gradient(145deg, #29363c, #35444c);
+	border-radius: 5px;
+	box-shadow:  7px 7px 14px #1e272b, -7px -7px 14px #2a373d;
+}
+
+.article a {
+	padding: 15px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+	border-radius: 5px;
+	height: 100%;
+}
+
+.article:hover {
+	background: linear-gradient(145deg, #1d262a, #141b1e);
+}
+
+.thumb {
+    aspect-ratio: 1/1;
+	flex: 0 0 150px;
+	background-color: #364044;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-toska-cacin-almeria-croquis-400x255.jpg);
+}
+
+.text {
+    flex: 1;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin: 0;
+	color: #ffc107;
+}
+
+.descr {
+	color: #91a5af;
+}
+
+
+
+
+@container article (min-width: 400px) {
+
+  .article a {
+    flex-direction: row;
+  }
+
+  .thumb {
+    flex: 0 0 100px;
+    align-self: flex-start;
+  }
+  
+}
+
+
+
+@container article (min-width: 600px) {
+
+  .thumb {
+    flex: 0 0 180px;
+    max-height: 100px;
+  }
+  
+}
+
+
+
+
+@container content (min-width: 500px) {
+
+  .article {
+	width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+  }
+  
+}
+
+
+@container content (min-width: 800px) {
+
+  .article {
+	width: 31%;
+    display: inline-flex;
+    margin-right: 3%;
+    flex-direction: column;
+  }
+  
+  .article a {
+    flex-direction: column;
+  }
+  
+  .thumb {
+    flex: 0 0 120px;
+    width: 100%;
+  }
+  
+  .article:nth-child(even) { margin-right: 3%; }
+  .article:nth-child(3n+0) { margin-right: 0%; }
+  
+}
+
+
+@container content (min-width: 1000px) {
+
+  .article {
+	  width: 48%;
+  }
+  .thumb {
+    max-height: initial;
+  }
+  
+  .article:nth-child(even) { margin-right: 3%; }
+  .article:nth-child(3n+0) { margin-right: 3%; }
+  .article:nth-child(2n+0) { margin-right: 0%; }
+  
+}
+
+
+
+@media only screen and (min-width:857px) {
+	.content {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+  .article {
+	  width: 47%;
+    margin-right: 3%;
+  }
+  .article:nth-child(3n+0) { margin-right: 3%; }
+  .article:nth-child(2n+0) { margin-right: 0%; }
+  .article:last-of-type { display: none; }
+}
+
+
+@media only screen and (min-width:1057px) {
+  
+  .article:last-of-type { 
+    display: inline-flex; 
+  }
+  .article {
+	  width: 31%;
+    margin-right: 0%;
+  }
+  .article:nth-child(3n+0) { margin-right: 0%; }
+}
+
+
+
+
+
+
+.article:nth-child(2) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2020/12/thumbnail-labordeta-bola-san-antonio-400x255.jpg);
+}
+
+.article:nth-child(3) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-espiral-cinco-cestos-croquis-400x255.jpg);
+}
+
+.article:nth-child(4) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-gran-diedro-lancha-yelmo-croquis-400x255.jpg);
+}
+
+.article:nth-child(5) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-duniania-wadi-rum-croquis-400x255.jpg);
+}
+
+.article:nth-child(6) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-sopa-de-gafas-brezos-croquis-400x255.jpg);
+}
+
+.article:nth-child(7) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-capuchon-sarcofago-croquis-400x255.jpg);
+}
+
+.article:nth-child(8) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-oscar-raul-hueco-hoces-croquis-400x255.jpg);
+}
+
+.article:nth-child(9) .thumb {
+	background-image: url(https://cuadernodeescaladas.com/wp-content/uploads/2019/08/thumbnail-fisura-barrancodelahoz-400x255.jpg);
+}
+
+

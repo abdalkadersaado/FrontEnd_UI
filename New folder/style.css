@@ -1,0 +1,238 @@
+*:not(head, script, svg, svg *) {
+    all: unset;
+    box-sizing: border-box;
+  }
+  *:not(head, script, svg, svg *)::before, *:not(head, script, svg, svg *)::after {
+    all: unset;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --pageBg: black;
+    --cardBg: #222;
+    --cardHover: #333;
+    --headingColor: white;
+    --linkColor: white;
+    --textColor: #ccc;
+    --accent: #444;
+    --superAccent: #666;
+    --coloredAccent: lawngreen;
+  }
+  
+  body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    background: var(--pageBg);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--pageBg);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--superAccent);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--textColor);
+  }
+  
+  a:active,
+  button:active {
+    transform: scale(0.95);
+    transition: all 0.05s linear;
+  }
+  
+  #gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  #gallery-container input {
+    display: none;
+  }
+  
+  #galleryFilters {
+    background: var(--cardBg);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  #galleryFilters button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--textColor);
+    font-size: 110%;
+    line-height: 110%;
+    font-weight: 400;
+    padding: 5px 10px;
+    margin: 10px;
+    border: 2px dotted var(--accent);
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+  }
+  #galleryFilters button:hover {
+    cursor: pointer;
+    background: var(--accent);
+    transition: all 0.1s ease-in-out;
+  }
+  #galleryFilters button label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-radius: 5px;
+  }
+  
+  #gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 1vmax 0vmax;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 1vmax;
+  }
+  #gallery .card {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--cardBg);
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card:hover {
+    background: var(--cardHover);
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  #gallery .card figcaption {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  #gallery .card figcaption h2 {
+    color: var(--headingColor);
+    font-size: 200%;
+    line-height: 110%;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  #gallery .card figcaption h2::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 20px;
+    background: var(--coloredAccent);
+    filter: brightness(0.4);
+    content: "";
+    z-index: -1;
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card:hover figcaption h2::after {
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption p {
+    color: var(--textColor);
+    font-size: 110%;
+    line-height: 150%;
+    font-weight: 400;
+    margin: 30px 0;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-left: 2px solid var(--accent);
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption:hover p {
+    border-left: 2px solid var(--coloredAccent);
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption a {
+    color: var(--linkColor);
+    font-size: 120%;
+    line-height: 110%;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption a::after {
+    position: absolute;
+    width: 0;
+    height: 1px;
+    top: 100%;
+    left: 0;
+    background: var(--coloredAccent);
+    content: "";
+    z-index: -1;
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption a:hover {
+    cursor: pointer;
+    color: var(--coloredAccent);
+    transition: all 0.2s ease-in-out;
+  }
+  #gallery .card figcaption a:hover::after {
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #nature:checked ~ #gallery > .card:not(.nature),
+  #plants:checked ~ #gallery > .card:not(.plants),
+  #animals:checked ~ #gallery > .card:not(.animals),
+  #technology:checked ~ #gallery > .card:not(.technology),
+  #architecture:checked ~ #gallery > .card:not(.architecture) {
+    display: none;
+  }
+  
+  #allImages:checked ~ #galleryFilters > button:nth-child(1),
+  #nature:checked ~ #galleryFilters > button:nth-child(2),
+  #plants:checked ~ #galleryFilters > button:nth-child(3),
+  #animals:checked ~ #galleryFilters > button:nth-child(4),
+  #technology:checked ~ #galleryFilters > button:nth-child(5),
+  #architecture:checked ~ #galleryFilters > button:nth-child(6) {
+    color: var(--coloredAccent);
+    border: 2px dotted var(--coloredAccent);
+  }
+  
+  @media (max-width: 991px) {
+    #gallery .card {
+      width: 49%;
+    }
+  }
+  @media (max-width: 500px) {
+    #gallery .card {
+      width: 100%;
+    }
+  }

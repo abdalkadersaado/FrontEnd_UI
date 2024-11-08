@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="rock-climbing">
+    <input type="radio" id="c-aid" name="c-level-1">
+    <input type="radio" id="c-free" name="c-level-1">
+    <input type="radio" id="c-roped" name="c-level-2">
+    <input type="radio" id="c-unroped" name="c-level-2">
+    <input type="radio" id="c-lead" name="c-level-3">
+    <input type="radio" id="c-toprope" name="c-level-3">
+    <input type="radio" id="c-soloing" name="c-level-4">
+    <input type="radio" id="c-bouldering" name="c-level-4">
+    <input type="radio" id="c-trad" name="c-level-5">
+    <input type="radio" id="c-sport" name="c-level-5">
+    
+    <div class="climb-selector">
+    
+        <label for="rock-climbing">CLIMB</label>
+    
+        <div class="climb-style aid-free">
+            <div class="climb-options">
+                <label for="c-aid">AID</label>
+                <label for="c-free">FREE</label>
+                <div class="tooltip"></div>
+                <div class="info"></div>
+            </div>
+        </div>
+    
+        <div class="climb-style roped-unroped">
+            <div class="climb-options">
+                <label for="c-roped">ROPED</label>
+                <label for="c-unroped">UNROP</label>
+            </div>
+        </div>
+    
+        <div class="climb-style soloing-bouldering">
+            <div class="climb-options">
+                <label for="c-soloing">SOLOING</label>
+                <label for="c-bouldering">BOULDER</label>
+            </div>
+        </div>
+    
+        <div class="climb-style lead-toprope">
+            <div class="climb-options">
+                <label for="c-lead">LEAD</label>
+                <label for="c-toprope">TOPROPE</label>
+            </div>
+        </div>
+    
+        <div class="climb-style trad-sport">
+            <div class="climb-options">
+                <label for="c-trad">TRAD</label>
+                <label for="c-sport">SPORT</label>
+            </div>
+        </div>
+    
+        <div class="tooltip"></div>
+    
+        <div class="climbing-img"></div>
+    
+        <div class="climbing-info">
+            <div class="climbing-text"></div>
+            <div class="climbing-desc"></div>
+        </div>
+    
+    </div> 
+</body>
+</html>

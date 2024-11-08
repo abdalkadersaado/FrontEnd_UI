@@ -1,0 +1,104 @@
+$lines: 300;
+$strong: 0.25vmin;
+$color: #cddc39;
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@900&display=swap');
+
+html {
+	height: 100vh;
+	background: #fff;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background: #193d4e;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.line {
+		position: absolute;
+		width: 200%;
+		height: 1px;
+		background: $color;
+		transform-style: preserve-3d;
+		box-shadow: 0 0 2vmin 0.5vmin $color;
+		@for $i from 1 through $lines {
+			&:nth-child(#{$i}) {
+				filter: hue-rotate(random(180) * 2deg);
+				height: random(18) * 0.01vmin;
+				$rX: random(360) * 1deg;
+				$rY: random(360) * 1deg;
+				$rZ: random(360) * 1deg;
+				$tY: random(360) * $strong;
+				transform: rotateX($rX) rotateY($rY) rotateZ($rZ) translateY($tY);
+				animation: #{rotate + $i} ((random(30) + 30) * 0.25s) linear infinite alternate;
+				@keyframes #{rotate + $i} {
+					@for $j from 1 through 100 {
+						#{$j * 1%} {								
+							transform: 
+								rotateX($rX + (360deg / 100 * $j)) 
+								rotateY($rY + (360deg / 100 * $j)) 
+								rotateZ($rZ + (360deg / 100 * $j)) 
+								translateY($tY);
+						}
+					}
+				}
+			}
+		}
+	}
+	&:hover > .line {
+		animation-duration: 60s;
+	}
+	.text {
+		position: absolute;
+		left: 0;
+		top: 0;
+		div {
+			font-size: 12vmin;
+			z-index: 3;
+			position: relative;
+			width: 100vw;
+			height: 25vh;
+			background: linear-gradient(45deg, #000, #fff, #000), #000;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #f608;
+			mix-blend-mode: luminosity;
+			text-shadow: 
+				1px -1px 0 #040404, 2px -2px 0 #cddc39, 
+				3px -3px 0 #ffeb3b, 4px -4px 0 #cddc39, 
+				5px -5px 0 #ffeb3b, 6px -6px 0 #cddc39;
+			font-family: 'Changa One', Arial, Helvetica,serif;
+			border: 2vmin solid #fff2;
+			box-sizing: border-box;
+		}
+		.number {
+			height: 50vh;
+			font-size: 50vmin;
+			font-weight: bold;
+			color: #fff4;
+			background: linear-gradient(45deg, #000, #fff, #000), #000;
+			letter-spacing: 0.75vmin;
+			text-shadow: 
+				1px -1px 0 #040404, 2px -2px 0 #cddc39, 
+				3px -3px 0 #ffeb3b, 4px -4px 0 #cddc39, 
+				5px -5px 0 #ffeb3b, 6px -6px 0 #cddc39, 
+				7px -7px 0 #cddc39, 8px -8px 0 #ffeb3b, 
+				9px -9px 0 #cddc39, 9px -9px 0 #ffeb3b, 
+				10px -10px 0 #cddc39, 11px -11px 0 #ffeb3b, 
+				12px -12px 0 #cddc39, 13px -13px 0 #ffeb3b, 
+				14px -14px 0 #cddc39, 15px -15px 1px #ffeb3b;
+			font-family: "Saira Extra Condensed", Arial, Helvetica, serif;
+		}
+	}
+}
+
+

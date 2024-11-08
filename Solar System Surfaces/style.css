@@ -1,0 +1,597 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
+html {
+	background-color: #fff;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--bg, #ccc);
+	--surface: url(https://cdn.josetxu.com/img/ss-sun.jpg);
+	background: var(--surface);
+	background-size: cover;
+	background-repeat: repeat-x;
+	background-position: 0% 50%;
+	transition: background 0.5s ease 0s;
+	font-family: 'Cute Font', Arial, Helvetica, serif;
+	animation: bga 120s linear 0s infinite;
+}
+
+@keyframes bga {
+	to { background-position: -200vh 50%; }
+}
+
+body:after {
+	content: "images \00a9 \00a0 nasa.gov";
+	position: absolute;
+	left: calc(50% - 5vw);
+	top: 0.5vw;
+	color: #0008;
+	font-size: 1.65vw;
+	text-shadow: 0px 1px 0px #fff8;
+	width: 10vw;
+	text-align: center;
+	mix-blend-mode: hard-light;
+}
+
+
+
+/*** INFO ***/
+
+.info {
+	background: #0001;
+	position: absolute;
+	height: 6vw;
+	bottom: 13vw;
+	left: 1vw;
+	border-radius: 5vw;
+	padding: 0 2.5vw;
+	box-sizing: border-box;
+	transition: all 1s ease 0s;
+}
+
+.info:after {
+	content: "";
+	border: 2vmin solid #fff0;
+	position: absolute;
+	border-top-color: #0001;
+	left: calc(50% - 2vmin);
+	transition: all 1s ease 0s;
+	top: 6vw;
+}
+
+.name {
+	text-align: center;
+	font-size: 4vw;
+	color: #fff;
+	width: 100%;
+	display: grid;
+}		
+
+.name:before {
+	text-shadow: 0 1px 0 #000;
+	mix-blend-mode: overlay;
+	line-height: 7.75vw;
+}
+
+.name:after {
+	color: #000C;
+	text-shadow: 0 1px 0 #fff;
+	mix-blend-mode: overlay;
+	float: left;
+	width: 100%;
+	font-size: 2.5vw;
+	margin-top: -7.7vw;
+	content: "SURFACE of";
+	max-height: 6vw;
+}	
+
+.name ~ div:before {
+	font-size: 2vw;
+	display: inline-block;
+	width: 50%;
+	text-align: right;
+	text-shadow: 0 1px 0 #fff;
+	font-weight: 600;
+}
+
+.name ~ div:after {
+	font-size: 2vw;
+	display: inline-block;
+	width: 48%;
+	margin-left: 2%;
+	text-align: left;
+	text-shadow: 0 1px 0 #fff;
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/*** SURFACES ***/
+
+.surfaces {
+	width: 98vw;
+	height: 7vw;
+	background: #0001;
+	margin: 0vh 1vw 4vw;
+	border-radius: 5vw;
+	text-align: center;
+	transition: all 1s ease 0s;
+}
+.surfaces > div {
+	display: inline-flex;
+	justify-content: center; 
+	align-items: center;
+	width: 5vw;
+	height: 5vw;
+	box-shadow: 0 0 0 0.125vw var(--bs, #0004) inset;
+	box-sizing: border-box;
+	margin: 1vw 0.5vw;
+	background: var(--bg);
+	background-size: cover;
+	border-radius: 100%;
+	position: relative;
+}
+
+.surfaces > div.satellite {
+	width: 2.5vw;
+	height: 2.5vw;
+}
+.surfaces > div.satellite span {
+	font-size: 1.5vw;
+	line-height: 2.85vw;
+}
+
+.surfaces > div span {
+	position: absolute;
+	bottom: -4.25vw;
+	font-size: 2.5vw;
+	color: #000c;
+	text-shadow: 0px 1px 1px #fff8;
+	mix-blend-mode: hard-light;
+	filter: invert(1);
+}
+
+
+
+/*** BUTTONS ***/
+
+input {
+	position: absolute;
+	display: none;
+}
+
+.surfaces label {
+	--pos: 25%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #0002;
+	background: radial-gradient(circle at var(--pos) var(--pos),  #fff0 50%, #000 80%);
+	border-radius: 100%;
+	cursor: pointer;
+	left: 0;
+	transition: all 0.5s ease 0s;
+}
+
+label:hover {
+	--pos: 0%;
+	transition: --pos 1s ease 0s;
+}
+
+label[for=sun] {
+	background: #fff0;
+}
+
+.surfaces > div:has(input:checked) {
+	--bs: #fff;
+
+	box-shadow: 0 0 0.125vw 0.125vw var(--bs), 0 0  0.125vw 0.125vw #0008 inset;
+}
+
+input:checked + label + span {
+	filter: invert(0);
+}
+
+.surfaces:hover, body:has(.surfaces:hover) .info {
+	background: #0004;
+}
+
+body:has(.surfaces:hover) .info:after {
+	border-top-color: #0004;
+}
+
+
+
+
+
+
+
+
+
+
+/*** CELESTIAL BODIES BG ***/
+
+.sun {
+	--bg: url(https://cdn.josetxu.com/img/ss-sun.jpg);
+}
+.mercury {
+	--bg: url(https://cdn.josetxu.com/img/ss-mercury.jpg);
+}
+.venus {
+	--bg: url(https://cdn.josetxu.com/img/ss-venus.jpg);
+}
+.earth {
+	--bg: url(https://cdn.josetxu.com/img/ss-earth.jpg);
+}
+.moon {
+	--bg: url(https://cdn.josetxu.com/img/ss-moon.jpg);
+}
+.mars {
+	--bg: url(https://cdn.josetxu.com/img/ss-mars.jpg);
+}
+.jupiter {
+	--bg: url(https://cdn.josetxu.com/img/ss-jupiter.jpg);
+}
+.io {
+	--bg: url(https://cdn.josetxu.com/img/ss-io.jpg);
+}
+.europa {
+	--bg: url(https://cdn.josetxu.com/img/ss-europa.jpg);
+}
+.saturn {
+	--bg: url(https://cdn.josetxu.com/img/ss-saturn.jpg);
+}
+.enceladus {
+	--bg: url(https://cdn.josetxu.com/img/ss-enceladus.jpg);
+}
+.titan {
+	--bg: url(https://cdn.josetxu.com/img/ss-titan.jpg);
+}
+.iapetus {
+	--bg: url(https://cdn.josetxu.com/img/ss-iapetus.jpg);
+}
+.neptune {
+	--bg: url(https://cdn.josetxu.com/img/ss-neptune.jpg);
+}
+.uranus {
+	--bg: url(https://cdn.josetxu.com/img/ss-uranus.jpg);
+}
+.pluto {
+	--bg: url(https://cdn.josetxu.com/img/ss-pluto.jpg);
+}
+.charon {
+	--bg: url(https://cdn.josetxu.com/img/ss-charon.jpg);
+}
+
+
+
+
+
+/*** CELESTIAL BODIES SURFACES ***/
+
+body:has(#sun:checked),
+body:has(#sun:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-sun.jpg);
+}
+body:has(#mercury:checked),
+body:has(#mercury:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-mercury.jpg);
+}
+body:has(#venus:checked),
+body:has(#venus:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-venus.jpg);
+}
+body:has(#earth:checked),
+body:has(#earth:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-earth.jpg);
+}
+body:has(#moon:checked),
+body:has(#moon:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-moon.jpg);
+}
+body:has(#mars:checked),
+body:has(#mars:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-mars.jpg);
+}
+body:has(#jupiter:checked),
+body:has(#jupiter:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-jupiter.jpg);
+}
+body:has(#io:checked),
+body:has(#io:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-io.jpg);
+}
+body:has(#europa:checked),
+body:has(#europa:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-europa.jpg);
+}
+body:has(#saturn:checked),
+body:has(#saturn:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-saturn.jpg);
+}
+body:has(#enceladus:checked),
+body:has(#enceladus:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-enceladus.jpg);
+}
+body:has(#titan:checked),
+body:has(#titan:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-titan.jpg);
+}
+body:has(#iapetus:checked),
+body:has(#iapetus:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-iapetus.jpg);
+}
+body:has(#neptune:checked),
+body:has(#neptune:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-neptune.jpg);
+}
+body:has(#uranus:checked),
+body:has(#uranus:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-uranus.jpg);
+}
+body:has(#pluto:checked),
+body:has(#pluto:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-pluto.jpg);
+}
+body:has(#charon:checked),
+body:has(#charon:not(:checked):hover) {
+	--surface: url(https://cdn.josetxu.com/img/ss-charon.jpg);
+}
+
+
+
+
+
+/*** CELESTIAL BODIES INFO POSITION ***/
+
+body:has(#sun:checked) .info,
+body:has(#sun:not(:checked):hover) .info {
+	left: calc(50% - 48.5vw);
+}		
+
+body:has(#mercury:checked) .info,
+body:has(#mercury:not(:checked):hover) .info {
+	left: calc(50% - 43.75vw);
+}
+
+body:has(#venus:checked) .info,
+body:has(#venus:not(:checked):hover) .info {
+	left: calc(50% - 36vw);
+}
+
+body:has(#earth:checked) .info,
+body:has(#earth:not(:checked):hover) .info {
+	left: calc(50% - 29.75vw);
+}
+
+body:has(#moon:checked) .info,
+body:has(#moon:not(:checked):hover) .info {
+	left: calc(50% - 24.75vw);
+}
+
+body:has(#mars:checked) .info,
+body:has(#mars:not(:checked):hover) .info {
+	left: calc(50% - 19.75vw);
+}
+
+body:has(#jupiter:checked) .info,
+body:has(#jupiter:not(:checked):hover) .info {
+	left: calc(50% - 13.75vw);
+}
+
+body:has(#io:checked) .info,
+body:has(#io:not(:checked):hover) .info {
+	left: calc(50% - 8.5vw);
+}
+
+body:has(#europa:checked) .info,
+body:has(#europa:not(:checked):hover) .info {
+	left: calc(50% - 5.25vw);
+}
+
+body:has(#saturn:checked) .info,
+body:has(#saturn:not(:checked):hover) .info {
+	left: calc(50% + 0vw);
+}
+
+body:has(#enceladus:checked) .info,
+body:has(#enceladus:not(:checked):hover) .info {
+	left: calc(50% + 2.5vw);
+}
+
+body:has(#titan:checked) .info,
+body:has(#titan:not(:checked):hover) .info {
+	left: calc(50% + 9vw);
+}
+
+body:has(#iapetus:checked) .info,
+body:has(#iapetus:not(:checked):hover) .info {
+	left: calc(50% + 12vw);
+}
+
+body:has(#uranus:checked) .info,
+body:has(#uranus:not(:checked):hover) .info {
+	left: calc(50% + 17.25vw);
+}
+
+body:has(#neptune:checked) .info,
+body:has(#neptune:not(:checked):hover) .info {
+	left: calc(50% + 23vw);
+}
+
+body:has(#pluto:checked) .info,
+body:has(#pluto:not(:checked):hover) .info {
+	left: calc(50% + 30.25vw);
+}
+
+body:has(#charon:checked) .info,
+body:has(#charon:not(:checked):hover) .info {
+	left: calc(50% + 34vw);
+}	
+
+
+
+
+
+/*** CELESTIAL BODIES INFO NAME ***/
+
+body:has(#sun:checked) .info .name:before,
+body:has(#sun:not(:checked):hover) .info .name:before {
+	content: "SUN";
+}
+
+body:has(#mercury:checked) .info .name:before,
+body:has(#mercury:not(:checked):hover) .info .name:before {
+	content: "MERCURY";
+}
+
+body:has(#venus:checked) .info .name:before,
+body:has(#venus:not(:checked):hover) .info .name:before  {
+	content: "VENUS";
+}
+
+body:has(#earth:checked) .info .name:before,
+body:has(#earth:not(:checked):hover) .info .name:before  {
+	content: "EARTH";
+}
+
+body:has(#moon:checked) .info .name:before,
+body:has(#moon:not(:checked):hover) .info .name:before  {
+	content: "MOON";
+}
+
+body:has(#mars:checked) .info .name:before,
+body:has(#mars:not(:checked):hover) .info .name:before  {
+	content: "MARS";
+}
+
+body:has(#jupiter:checked) .info .name:before,
+body:has(#jupiter:not(:checked):hover) .info .name:before  {
+	content: "JUPITER";
+}
+
+body:has(#io:checked) .info .name:before,
+body:has(#io:not(:checked):hover) .info .name:before  {
+	content: "IO";
+}
+
+body:has(#europa:checked) .info .name:before,
+body:has(#europa:not(:checked):hover) .info .name:before  {
+	content: "EUROPA";
+}
+
+body:has(#saturn:checked) .info .name:before,
+body:has(#saturn:not(:checked):hover) .info .name:before  {
+	content: "SATURN";
+}
+
+body:has(#enceladus:checked) .info .name:before,
+body:has(#enceladus:not(:checked):hover) .info .name:before  {
+	content: "ENCELADUS";
+}
+
+body:has(#titan:checked) .info .name:before,
+body:has(#titan:not(:checked):hover) .info .name:before  {
+	content: "TITAN";
+}
+
+body:has(#iapetus:checked) .info .name:before,
+body:has(#iapetus:not(:checked):hover) .info .name:before  {
+	content: "IAPETUS";
+}
+
+body:has(#uranus:checked) .info .name:before,
+body:has(#uranus:not(:checked):hover) .info .name:before  {
+	content: "URANUS";
+}
+
+body:has(#neptune:checked) .info .name:before,
+body:has(#neptune:not(:checked):hover) .info .name:before  {
+	content: "NEPTUNE";
+}
+
+body:has(#pluto:checked) .info .name:before,
+body:has(#pluto:not(:checked):hover) .info .name:before  {
+	content: "PLUTO";
+}
+
+body:has(#charon:checked) .info .name:before,
+body:has(#charon:not(:checked):hover) .info .name:before  {
+	content: "CHARON";
+}
+
+
+
+
+
+
+.firefox {
+	background: #00000040;
+	color: #fff;
+	position: absolute;
+	top: 10vw;
+	width: 35vw;
+	padding: 1vw 3vw 2vw;
+	border-radius: 10vw;
+	text-align: center;
+	font-size: 30px;
+}
+
+.firefox label {
+	background: #0004;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 6px;
+	top: 5px;
+	cursor: pointer;
+	border-radius: 100%;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 40px;
+}
+.firefox label:hover {
+	background: #fff8;
+	color: #0008;
+}
+
+.firefox div {
+	text-transform: uppercase;
+	font-size: 45px;
+	color: #000e;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #ffffff40
+}
+
+.firefox span code {
+	font-size: 24px;
+	background: #0008;
+	padding: 0 10px;
+	border-radius: 25px;
+}
+
+input#ff:checked ~.firefox {
+	display: none;
+}
+
+/* hide firefox warning if browser is chrome */
+@supports (-webkit-font-smoothing: antialiased) {
+	.firefox {
+		display: none;
+	}
+}
